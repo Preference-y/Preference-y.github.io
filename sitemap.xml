@@ -121,14 +121,14 @@
   </url>
   
   <url>
-    <loc>https://preference-y.github.io/books/index.html</loc>
+    <loc>https://preference-y.github.io/links/index.html</loc>
     
     <lastmod>2020-06-07</lastmod>
     
   </url>
   
   <url>
-    <loc>https://preference-y.github.io/links/index.html</loc>
+    <loc>https://preference-y.github.io/books/index.html</loc>
     
     <lastmod>2020-06-07</lastmod>
     
@@ -151,6 +151,13 @@
 
   
   <url>
+    <loc>https://preference-y.github.io/tags/git/</loc>
+    <lastmod>2020-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://preference-y.github.io/tags/Fiddler/</loc>
     <lastmod>2020-09-22</lastmod>
     <changefreq>daily</changefreq>
@@ -159,13 +166,6 @@
   
   <url>
     <loc>https://preference-y.github.io/tags/%E6%8A%93%E5%8C%85/</loc>
-    <lastmod>2020-09-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://preference-y.github.io/tags/git/</loc>
     <lastmod>2020-09-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
