@@ -6,7 +6,7 @@
   <link href="https://preference-y.github.io/atom.xml" rel="self"/>
   
   <link href="https://preference-y.github.io/"/>
-  <updated>2020-09-22T16:54:18.987Z</updated>
+  <updated>2020-09-22T17:02:57.078Z</updated>
   <id>https://preference-y.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git中fatal: Authentication failed的问题</title>
+    <link href="https://preference-y.github.io/2020/09/23/git%E4%B8%ADfatal-Authentication-failed%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>https://preference-y.github.io/2020/09/23/git%E4%B8%ADfatal-Authentication-failed%E7%9A%84%E9%97%AE%E9%A2%98/</id>
+    <published>2020-09-22T17:02:05.000Z</published>
+    <updated>2020-09-22T17:02:57.078Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a name=&quot;GmEx1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述:&quot;&gt;&lt;/a&gt;问题描述:&lt;/h4&gt;&lt;p&gt;有些情况下, 在进行git的远程操作的情况下, 会报一个这样的错</summary>
+      
+    
+    
+    
+    <category term="笔记" scheme="https://preference-y.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="git" scheme="https://preference-y.github.io/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>Fiddler 弱网测试</title>
@@ -215,7 +238,7 @@
     
       
       
-    <summary type="html">&lt;h1 id=&quot;解决-103-x69-116-64-103-105-x74-104-117-98-x2e-x63-111-x6d-Permission-denied-publickey&quot;&gt;&lt;a href=&quot;#解决-103-x69-116-64-103-105-x74-104-11</summary>
+    <summary type="html">&lt;h1 id=&quot;解决-x67-105-x74-x40-103-105-116-x68-117-98-46-99-x6f-x6d-Permission-denied-publickey&quot;&gt;&lt;a href=&quot;#解决-x67-105-x74-x40-103-105-116-x68-11</summary>
       
     
     
