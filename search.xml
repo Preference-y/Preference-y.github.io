@@ -20,6 +20,12 @@
 <li>用ssh命令分别测试<br /><code>$ ssh -T git@gitee.com</code><br /><code>$ ssh -T git@github.com</code><br />这里以gitee为例，成功的话会返回下图内容<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600693883785-f2d24c00-be1c-4281-a896-b0b96018a4d0.png#align=left&display=inline&height=160&margin=%5Bobject%20Object%5D&name=image.png&originHeight=160&originWidth=852&size=140561&status=done&style=none&width=852" alt="image.png"><br /></li>
 </ol>
 ]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
   </entry>
   <entry>
     <title>SQL笔记</title>
@@ -250,8 +256,11 @@
 </ul>
 <p><br /><strong>Serializable</strong> 虽然隔离级别最高，但是效率会大大下降。</p>
 ]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
       <tags>
-        <tag>笔记</tag>
+        <tag>sql</tag>
       </tags>
   </entry>
   <entry>
@@ -300,6 +309,12 @@
 </blockquote>
 <p>摘自<a href="http://www.ruanyifeng.com/">阮一峰</a></p>
 ]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title>Hello World</title>
@@ -327,25 +342,11 @@
 <p><strong>使用方法：新建<code>404.html</code> 页面，放到theme/pure主题的 source 目录下，内容如下：</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta http-equiv&#x3D;&quot;content-type&quot; content&#x3D;&quot;text&#x2F;html;charset&#x3D;utf-8;&quot;&#x2F;&gt;</span><br><span class="line">  &lt;meta http-equiv&#x3D;&quot;X-UA-Compatible&quot; content&#x3D;&quot;IE&#x3D;edge,chrome&#x3D;1&quot; &#x2F;&gt;</span><br><span class="line">  &lt;meta name&#x3D;&quot;robots&quot; content&#x3D;&quot;all&quot; &#x2F;&gt;</span><br><span class="line">  &lt;meta name&#x3D;&quot;robots&quot; content&#x3D;&quot;index,follow&quot;&#x2F;&gt;</span><br><span class="line">  &lt;link rel&#x3D;&quot;stylesheet&quot; type&#x3D;&quot;text&#x2F;css&quot; href&#x3D;&quot;https:&#x2F;&#x2F;qzone.qq.com&#x2F;gy&#x2F;404&#x2F;style&#x2F;404style.css&quot;&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;script type&#x3D;&quot;text&#x2F;plain&quot; src&#x3D;&quot;http:&#x2F;&#x2F;www.qq.com&#x2F;404&#x2F;search_children.js&quot;</span><br><span class="line">          charset&#x3D;&quot;utf-8&quot; homePageUrl&#x3D;&quot;&#x2F;&quot;</span><br><span class="line">          homePageName&#x3D;&quot;回到我的主页&quot;&gt;</span><br><span class="line">  &lt;&#x2F;script&gt;</span><br><span class="line">  &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;qzone.qq.com&#x2F;gy&#x2F;404&#x2F;data.js&quot; charset&#x3D;&quot;utf-8&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">  &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;qzone.qq.com&#x2F;gy&#x2F;404&#x2F;page.js&quot; charset&#x3D;&quot;utf-8&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
       <tags>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo博客的pure主题添加动态背景</title>
-    <url>/2020/09/22/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84pure%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E5%8A%A8%E6%80%81%E8%83%8C%E6%99%AF/</url>
-    <content><![CDATA[<p><a name="w4BJt"></a></p>
-<h4 id="修改-layout-ejs"><a href="#修改-layout-ejs" class="headerlink" title="修改 _layout.ejs"></a>修改 _layout.ejs</h4><p>打开 <code>themes/主题名称/layout/layout.ejs</code><br />在 &lt; /body&gt;之前添加代码（不要放在&lt; /head&gt;后）。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;% if (theme.canvas_nest) &#123; %&gt;</span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;</span><br><span class="line">color&#x3D;&quot;0,0,0&quot; opacity&#x3D;&#39;0.4&#39; zIndex&#x3D;&quot;-2&quot; count&#x3D;&quot;88&quot; src&#x3D;&quot;&#x2F;&#x2F;cdn.bootcss.com&#x2F;canvas-nest.js&#x2F;1.0.0&#x2F;canvas-nest.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
-<p>可参照自己所用主题的 layout.ejs 中有 if 的那部分代码。<br><a name="NE6dl"></a></p>
-<h4 id="配置项说明"><a href="#配置项说明" class="headerlink" title="配置项说明"></a>配置项说明</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">color：线条颜色, 默认：&#39;0,0,0&#39;；三个数字分别为（R,G,B）</span><br><span class="line">opacity：线条透明度（0~1）, 默认：0.5</span><br><span class="line">count：线条的总数量，默认：150</span><br><span class="line">zIndex：背景的z-index属性，css属性用于控制所在层的位置，默认：-1</span><br></pre></td></tr></table></figure>
-<p><a name="Vt77Y"></a></p>
-<h4 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h4><p>打开<code>themes/主题名称/_config.yml</code>，随意找一行，添加代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># --------------------------------------------------------------</span><br><span class="line"># background settings</span><br><span class="line"># --------------------------------------------------------------</span><br><span class="line"># add canvas-nest effect</span><br><span class="line"># see detail from https:&#x2F;&#x2F;github.com&#x2F;hustcc&#x2F;canvas-nest.js</span><br><span class="line">canvas_nest: true</span><br></pre></td></tr></table></figure>
-<p>然后运行<code>hexo s</code>，在浏览器的地址栏输入<code>localhost:4000</code>就能看到效果了。<br /><br><br />参考：<strong><a href="https://shenzekun.github.io/hexo%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E5%8A%A8%E6%80%81%E8%83%8C%E6%99%AF.html">距离</a></strong></p>
-]]></content>
-      <tags>
-        <tag>笔记</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -362,11 +363,32 @@
 <br />
 <br />
 ]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
   </entry>
   <entry>
-    <title>我的第一篇博客</title>
-    <url>/2020/06/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[]]></content>
+    <title>hexo博客的pure主题添加动态背景</title>
+    <url>/2020/09/22/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84pure%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E5%8A%A8%E6%80%81%E8%83%8C%E6%99%AF/</url>
+    <content><![CDATA[<p><a name="w4BJt"></a></p>
+<h4 id="修改-layout-ejs"><a href="#修改-layout-ejs" class="headerlink" title="修改 _layout.ejs"></a>修改 _layout.ejs</h4><p>打开 <code>themes/主题名称/layout/layout.ejs</code><br />在 &lt; /body&gt;之前添加代码（不要放在&lt; /head&gt;后）。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;% if (theme.canvas_nest) &#123; %&gt;</span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;</span><br><span class="line">color&#x3D;&quot;0,0,0&quot; opacity&#x3D;&#39;0.4&#39; zIndex&#x3D;&quot;-2&quot; count&#x3D;&quot;88&quot; src&#x3D;&quot;&#x2F;&#x2F;cdn.bootcss.com&#x2F;canvas-nest.js&#x2F;1.0.0&#x2F;canvas-nest.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+<p>可参照自己所用主题的 layout.ejs 中有 if 的那部分代码。<br><a name="NE6dl"></a></p>
+<h4 id="配置项说明"><a href="#配置项说明" class="headerlink" title="配置项说明"></a>配置项说明</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">color：线条颜色, 默认：&#39;0,0,0&#39;；三个数字分别为（R,G,B）</span><br><span class="line">opacity：线条透明度（0~1）, 默认：0.5</span><br><span class="line">count：线条的总数量，默认：150</span><br><span class="line">zIndex：背景的z-index属性，css属性用于控制所在层的位置，默认：-1</span><br></pre></td></tr></table></figure>
+<p><a name="Vt77Y"></a></p>
+<h4 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h4><p>打开<code>themes/主题名称/_config.yml</code>，随意找一行，添加代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># --------------------------------------------------------------</span><br><span class="line"># background settings</span><br><span class="line"># --------------------------------------------------------------</span><br><span class="line"># add canvas-nest effect</span><br><span class="line"># see detail from https:&#x2F;&#x2F;github.com&#x2F;hustcc&#x2F;canvas-nest.js</span><br><span class="line">canvas_nest: true</span><br></pre></td></tr></table></figure>
+<p>然后运行<code>hexo s</code>，在浏览器的地址栏输入<code>localhost:4000</code>就能看到效果了。<br /><br><br />参考：<strong><a href="https://shenzekun.github.io/hexo%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E5%8A%A8%E6%80%81%E8%83%8C%E6%99%AF.html">距离</a></strong></p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title>解决git@github.com: Permission denied (publickey).</title>
@@ -392,6 +414,17 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh-add ~&#x2F;.ssh&#x2F;id_rsa</span><br><span class="line"></span><br><span class="line">id_rsa是私钥的名字</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p><strong>如果执行后，提示执行ssh-add时出现Could not open a connection to your authentication agent</strong><br /><strong>执行如下命令　ssh-agent bash<br />然后再执行 ssh-add ~/.ssh/id_rsa即可。</strong><br /><br><br />Identity added: …这是ssh key文件路径的信息<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600599762026-9b6cfa7b-2fbe-4cc5-9413-27916534ea3b.png#align=left&display=inline&height=631&margin=%5Bobject%20Object%5D&name=image.png&originHeight=631&originWidth=884&size=469528&status=done&style=none&width=884" alt="image.png"></p>
 ]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我的第一篇博客</title>
+    <url>/2020/06/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Linux命令操作大全</title>
@@ -1824,8 +1857,11 @@
 </tr>
 </tbody></table>
 ]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
       <tags>
-        <tag>笔记</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
 </search>
