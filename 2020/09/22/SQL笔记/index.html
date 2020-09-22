@@ -17,20 +17,26 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>hexo搭建的博客增加搜索功能 | Preference-y</title>
-  <meta name="description" content="具体操作1.安装搜索：在Hexo的根目录下，打开命令可执行窗口，执行如下命令： 1npm install hexo-generator-searchdb --save 2.blog目录下的全局配置文件_config.yml，新增如下内容： 12345search:  path: search.xml  field: post  format: html  limit: 10000 3.hexo主">
+  <title>SQL笔记 | Preference-y</title>
+  <meta name="description" content="SQL 简介SQL &#x3D; Structured Query Language总的来说，SQL语言定义了这么几种操作数据库的能力：  DDL：Data Definition LanguageDDL允许用户定义数据，也就是创建表、删除表、修改表结构这些操作。通常，DDL由数据库管理员执行。 DML：Data Manipulation LanguageDML为用户提供添加、删除、更新数据的能力，这些是应">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo搭建的博客增加搜索功能">
-<meta property="og:url" content="https://preference-y.github.io/2020/09/22/hexo%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/index.html">
+<meta property="og:title" content="SQL笔记">
+<meta property="og:url" content="https://preference-y.github.io/2020/09/22/SQL%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="具体操作1.安装搜索：在Hexo的根目录下，打开命令可执行窗口，执行如下命令： 1npm install hexo-generator-searchdb --save 2.blog目录下的全局配置文件_config.yml，新增如下内容： 12345search:  path: search.xml  field: post  format: html  limit: 10000 3.hexo主">
+<meta property="og:description" content="SQL 简介SQL &#x3D; Structured Query Language总的来说，SQL语言定义了这么几种操作数据库的能力：  DDL：Data Definition LanguageDDL允许用户定义数据，也就是创建表、删除表、修改表结构这些操作。通常，DDL由数据库管理员执行。 DML：Data Manipulation LanguageDML为用户提供添加、删除、更新数据的能力，这些是应">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-09-22T09:16:48.000Z">
-<meta property="article:modified_time" content="2020-09-22T09:17:51.878Z">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600767455376-6ba5ed8a-e38d-4126-9760-fba135d1cfcf.png#align=left&display=inline&height=221&margin=%5Bobject%20Object%5D&name=image.png&originHeight=221&originWidth=293&size=32365&status=done&style=none&width=293">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600767496796-99e923bf-7000-4a74-948a-f53b85b293e7.png#align=left&display=inline&height=223&margin=%5Bobject%20Object%5D&name=image.png&originHeight=223&originWidth=293&size=41847&status=done&style=none&width=293">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600767547209-d1ed8302-f0a2-4c92-a3f2-872142664c90.png#align=left&display=inline&height=222&margin=%5Bobject%20Object%5D&name=image.png&originHeight=222&originWidth=291&size=43006&status=done&style=none&width=291">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600767574713-4f49791a-bc74-4c2e-ae25-6ca5193a06a3.png#align=left&display=inline&height=224&margin=%5Bobject%20Object%5D&name=image.png&originHeight=224&originWidth=294&size=51209&status=done&style=none&width=294">
+<meta property="article:published_time" content="2020-09-22T10:06:55.000Z">
+<meta property="article:modified_time" content="2020-09-22T10:08:06.028Z">
 <meta property="article:author" content="Ning">
+<meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600767455376-6ba5ed8a-e38d-4126-9760-fba135d1cfcf.png#align=left&display=inline&height=221&margin=%5Bobject%20Object%5D&name=image.png&originHeight=221&originWidth=293&size=32365&status=done&style=none&width=293">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://preference-y.github.io/2020/09/22/hexo%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/index.html">
+  <link rel="canonical" href="https://preference-y.github.io/2020/09/22/SQL%E7%AC%94%E8%AE%B0/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -340,14 +346,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-hexo搭建的博客增加搜索功能" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-SQL笔记" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      hexo搭建的博客增加搜索功能
+      SQL笔记
     </h1>
   
 
@@ -355,12 +361,17 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2020/09/22/hexo%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/" class="article-date">
-	  <time datetime="2020-09-22T09:16:48.000Z" itemprop="datePublished">2020-09-22</time>
+	<a href="/2020/09/22/SQL%E7%AC%94%E8%AE%B0/" class="article-date">
+	  <time datetime="2020-09-22T10:06:55.000Z" itemprop="datePublished">2020-09-22</time>
 	</a>
 </span>
         
         
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a>
+  </span>
+
 
         
 	<span class="article-read hidden-xs">
@@ -371,22 +382,237 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/09/22/hexo%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/09/22/SQL%E7%AC%94%E8%AE%B0/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p><a name="aNUKB"></a></p>
-<h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h2><p>1.安装搜索：在Hexo的根目录下，打开命令可执行窗口，执行如下命令：<br /></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
-<p>2.blog目录下的全局配置文件_config.yml，新增如下内容：<br /></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure>
-<p>3.hexo主题配置文件（\themes_config.yml），修改local_search的enable为true：<br /></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># Local search</span><br><span class="line"># Dependencies: https:&#x2F;&#x2F;github.com&#x2F;flashlab&#x2F;hexo-generator-search</span><br><span class="line">local_search:</span><br><span class="line">  enable: true</span><br><span class="line">  # if auto, trigger search by changing input</span><br><span class="line">  # if manual, trigger search by pressing enter key or search button</span><br><span class="line">  trigger: auto</span><br><span class="line">  # show top n results per article, show all results by setting to -1</span><br><span class="line">  top_n_per_article: 1</span><br></pre></td></tr></table></figure>
+        <p><a name="e28d2d92"></a></p>
+<h2 id="SQL-简介"><a href="#SQL-简介" class="headerlink" title="SQL 简介"></a>SQL 简介</h2><p><br />SQL = Structured Query Language<br /><br><br />总的来说，SQL语言定义了这么几种操作数据库的能力：<br /></p>
+<ul>
+<li>DDL：Data Definition Language<br />DDL允许用户定义数据，也就是创建表、删除表、修改表结构这些操作。通常，DDL由数据库管理员执行。</li>
+<li>DML：Data Manipulation Language<br />DML为用户提供添加、删除、更新数据的能力，这些是应用程序对数据库的日常操作。</li>
+<li>DQL：Data Query Language<br />DQL允许用户查询数据，这也是通常最频繁的数据库日常操作。</li>
+</ul>
+<p><a name="99ae2ecd"></a></p>
+<h2 id="数据库类别"><a href="#数据库类别" class="headerlink" title="数据库类别"></a>数据库类别</h2><ul>
+<li>关系型数据库(SQL)</li>
+<li>非关系型数据库(NoSQL) - MongoDB, Cassandra, Dynamo</li>
+</ul>
+<p><a name="32231a60"></a></p>
+<h2 id="关系模型"><a href="#关系模型" class="headerlink" title="关系模型"></a>关系模型</h2><p><a name="475cdfca"></a></p>
+<h3 id="主键"><a href="#主键" class="headerlink" title="主键"></a>主键</h3><p><br />主键是关系表中记录的唯一标识。选取主键的一个基本原则是：不使用任何业务相关的字段作为主键。<br /></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &lt;student&gt;</span><br><span class="line">ADD CONSTRAINT &lt;pk_id&gt;</span><br><span class="line">PRIMARY KEY (&lt;id&gt;);</span><br></pre></td></tr></table></figure>
 
-<br />
-<br />
+
+<p><a name="f637ae4c"></a></p>
+<h3 id="外键"><a href="#外键" class="headerlink" title="外键"></a>外键</h3><p><br />外键是用来关联 2 个表结构的，表直接的约束分为以下 3 种：<br /></p>
+<ol>
+<li>一对一</li>
+<li>一对多 - 外键建立在‘多’的表中(即从表)</li>
+<li>多对多 - 需要建立中间表</li>
+</ol>
+<ul>
+<li><p>创建外键</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &lt;student&gt;</span><br><span class="line">ADD CONSTRAINT &lt;fk_class_id&gt;</span><br><span class="line">FOREIGN KEY (&lt;class_id&gt;)</span><br><span class="line">REFERENCES classes (&lt;id&gt;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除外键</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &lt;students&gt;</span><br><span class="line">DROP FOREIGN KEY &lt;fk_class_id&gt;;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<p><a name="b271e427"></a></p>
+<h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3><p><br />索引是关系数据库中对某一列或多个列的值进行预排序的数据结构。通过使用索引，可以让数据库系统不必扫描整个表，而是直接定位到符合条件的记录，这样就大大加快了查询速度。<br /></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &lt;students&gt;</span><br><span class="line">ADD INDEX &lt;idx_name_score&gt; (&lt;name&gt;, &lt;score&gt;);</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>唯一索引<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &lt;students&gt;</span><br><span class="line">ADD UNIQUE INDEX &lt;uni_name&gt; (&lt;name&gt;);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<p><a name="7db33d8b"></a></p>
+<h3 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h3><p><br />根据业务要求，像身份号、手机号、邮箱地址等，它们具有业务含义不易作为主键，但是又具有唯一性：即不能出现两条记录存储了同一个身份证号。这个时候，就可以给该列添加一个唯一约束。<br /></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &lt;students&gt;</span><br><span class="line">ADD CONSTRAINT &lt;uni_name&gt;</span><br><span class="line">UNIQUE (&lt;name&gt;);</span><br></pre></td></tr></table></figure>
+
+
+<p><a name="89f8857a"></a></p>
+<h3 id="SQL-查询"><a href="#SQL-查询" class="headerlink" title="SQL 查询"></a>SQL 查询</h3><p><br />不带 <code>FROM</code> 子句的 <code>SELECT</code> 语句有一个有用的用途，就是用来判断当前到数据库的连接是否有效。许多检测工具会执行一条 <code>SELECT 1;</code> 来测试数据库连接。<br /></p>
+<ol>
+<li>基本查询 - <code>SELECT * FROM &lt;students&gt;</code></li>
+<li>条件查询 - <code>SELECT * FROM &lt;students&gt; WHERE id = 1</code></li>
+<li>投影查询 - <code>SELECT id, name FROM &lt;students&gt;</code></li>
+<li>排序 - <code>SELECT * FROM &lt;students&gt; ORDER BY id DESC</code> NOTE: <code>OREDER BY</code> 要在 <code>WHERE</code> 条件后</li>
+<li>分页查询 - <code>SELECT * FROM &lt;students&gt; LIMIT &lt;10&gt; OFFSET &lt;0&gt;</code> <code>pageSize</code> - <code>LIMIT</code> <code>pageIndex</code> - <code>OFFSET</code>=<code>pageSize * (pageIndex - 1)</code>, <code>pageIndex</code> 从 <code>1</code> 开始，而 <code>OFFSET</code> 从 <code>0</code> 开始。</li>
+<li>聚合查询 聚合函数：<code>COUNT(), SUM(), AVG(), MAX(), MIN()</code> 通过 <code>GROUP BY</code> 进行分组 <code>SELECT &lt;class_id&gt;, &lt;gender&gt;, COUNT(*) num FROM &lt;students&gt; GROUP BY &lt;class_id&gt;, &lt;gender&gt;;</code></li>
+<li>多表查询 - <code>SELECT * FROM &lt;students&gt;, &lt;classes&gt;;</code> 获得的集合为 A 表行数 * B 表行数</li>
+<li>连接查询<ul>
+<li>内连接(INNER JOIN)</li>
+<li>外连接(OUTER JOIN)<ul>
+<li>左连接(LEFT OUTER JOIN)</li>
+<li>右连接(RIGHT OUTER JOIN)</li>
+<li>全连接(FULL OUTER JOIN) (MySQL不支持全连接可以使用union 连接 leftjoin和right join)<table>
+<thead>
+<tr>
+<th>INNER JOIN</th>
+<th>LEFT OUTER JOIN</th>
+<th>RIGHT OUTER JOIN</th>
+<th>FULL OUTER JOIN</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>两张表都存在的记录</td>
+<td>左表存在的记录</td>
+<td>右表存在的记录</td>
+<td>左右表都存在的记录</td>
+</tr>
+<tr>
+<td><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600767455376-6ba5ed8a-e38d-4126-9760-fba135d1cfcf.png#align=left&display=inline&height=221&margin=%5Bobject%20Object%5D&name=image.png&originHeight=221&originWidth=293&size=32365&status=done&style=none&width=293" alt="image.png"></td>
+<td><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600767496796-99e923bf-7000-4a74-948a-f53b85b293e7.png#align=left&display=inline&height=223&margin=%5Bobject%20Object%5D&name=image.png&originHeight=223&originWidth=293&size=41847&status=done&style=none&width=293" alt="image.png"></td>
+<td><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600767547209-d1ed8302-f0a2-4c92-a3f2-872142664c90.png#align=left&display=inline&height=222&margin=%5Bobject%20Object%5D&name=image.png&originHeight=222&originWidth=291&size=43006&status=done&style=none&width=291" alt="image.png"></td>
+<td><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600767574713-4f49791a-bc74-4c2e-ae25-6ca5193a06a3.png#align=left&display=inline&height=224&margin=%5Bobject%20Object%5D&name=image.png&originHeight=224&originWidth=294&size=51209&status=done&style=none&width=294" alt="image.png"></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><a name="66c2f83c"></a></p>
+<h3 id="SQL-修改"><a href="#SQL-修改" class="headerlink" title="SQL 修改"></a>SQL 修改</h3><p><br />关系数据库的基本操作就是增删改查，即 <code>CRUD：Create、Delete、Update、Retrieve</code>。<br /><br><br />对于增、删、改，对应的SQL语句分别是：<br /></p>
+<ul>
+<li><code>INSERT</code>：插入新记录 - <code>INSERT INTO &lt;表名&gt; (字段1, 字段2, ...) VALUES (值1, 值2, ...);</code></li>
+<li><code>UPDATE</code>：更新已有记录 - <code>UPDATE &lt;表名&gt; SET 字段1=值1, 字段2=值2, ... WHERE ...;</code></li>
+<li><code>DELETE</code>：删除已有记录 - <code>DELETE FROM &lt;表名&gt; WHERE ...;</code></li>
+</ul>
+<p><a name="b6cd86f0"></a></p>
+<h2 id="常用-SQL-语句"><a href="#常用-SQL-语句" class="headerlink" title="常用 SQL 语句"></a>常用 SQL 语句</h2><p><a name="1000413c"></a></p>
+<h3 id="数据库-表操作-SQL-语句"><a href="#数据库-表操作-SQL-语句" class="headerlink" title="数据库 + 表操作 SQL 语句"></a>数据库 + 表操作 SQL 语句</h3><table>
+<thead>
+<tr>
+<th>SQL 语句</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SHOW DATABASES</td>
+<td>列出所有数据库</td>
+</tr>
+<tr>
+<td>CREATE DATABASE <database_name></td>
+<td>创建数据库</td>
+</tr>
+<tr>
+<td>DROP DATABASE <database_name></td>
+<td>删除数据库</td>
+</tr>
+<tr>
+<td>USE <database_name></td>
+<td>切换当前数据库</td>
+</tr>
+<tr>
+<td>SHOW TABLES</td>
+<td>列出所有表</td>
+</tr>
+<tr>
+<td>DESC <table_name></td>
+<td>查看表结构</td>
+</tr>
+<tr>
+<td>SHOW CREATE TABLE <table_name></td>
+<td>查看创建表的 SQL 语句</td>
+</tr>
+<tr>
+<td>DROP TABLE <table_name></td>
+<td>删除表</td>
+</tr>
+<tr>
+<td>ALTER TABLE <table_name> ADD COLUMN <column_name> VARCHAR(10) NOT NULL</td>
+<td>新增列</td>
+</tr>
+<tr>
+<td>ALTER TABLE <table_name> CHANGE COLUMN <column_name> VARCHAR(20) NOT NULL</td>
+<td>修改列属性</td>
+</tr>
+<tr>
+<td>ALTER TABLE <table_name> DROP COLUMN <column_name></td>
+<td>删除列</td>
+</tr>
+<tr>
+<td>EXIT</td>
+<td>退出 MYSQL 连接</td>
+</tr>
+</tbody></table>
+<p><a name="b6f224db"></a></p>
+<h3 id="实用-SQL-语句"><a href="#实用-SQL-语句" class="headerlink" title="实用 SQL 语句"></a>实用 SQL 语句</h3><ul>
+<li>插入或替换 <code>REPLACE INTO &lt;students&gt; (&lt;id&gt;, &lt;class_id&gt;, &lt;...&gt;) VALUES(&lt;1&gt;, &lt;1&gt;, &lt;...&gt;)</code></li>
+</ul>
+<p>若 <code>id=1</code> 记录不存在，插入新纪录； 若 <code>id=1</code> 记录存在，当前 <code>id=1</code> 记录被删除，然后再插入新纪录。</p>
+<ul>
+<li>插入或更新 <code>INSERT INTO &lt;students&gt; (&lt;id&gt;, &lt;class_id&gt;, &lt;name&gt;, &lt;...&gt;) VALUES(&lt;1&gt;, &lt;1&gt;, &lt;&#39;xiao_min&#39;&gt;, &lt;...&gt;) ON DUPLICATE KEY UPDATE &lt;name&gt;=&lt;&#39;xiao_min&#39;&gt;, &lt;...&gt;;</code></li>
+</ul>
+<p>若 <code>id=1</code> 记录不存在，插入新纪录； 若 <code>id=1</code> 记录存在，当前 <code>id=1</code> 记录被更新，更新字段有 <code>UPDATE</code> 指定。</p>
+<ul>
+<li>插入或忽略 <code>INSERT IGNORE INTO &lt;students&gt; (&lt;id&gt;, &lt;class_id&gt;, &lt;...&gt;) VALUES(&lt;1&gt;, &lt;1&gt;, &lt;...&gt;);</code></li>
+</ul>
+<p>若 <code>id=1</code>记录不存在，<code>INSERT</code> 语句将插入新记录，否则，不执行任何操作。</p>
+<ul>
+<li><p>快照 <code>CREATE TABLE &lt;students_of_class1&gt; SELECT * FROM &lt;students&gt; WHERE &lt;class_id&gt;=&lt;1&gt;;</code></p>
+<p>通过查询集合创建新表<br /></p>
+</li>
+</ul>
+<p><a name="2d4877c9"></a></p>
+<h2 id="事务操作"><a href="#事务操作" class="headerlink" title="事务操作"></a>事务操作</h2><p><br />多条语句作为一个整体进行操作的功能，被称为数据库事务。数据库事务可以确保该事务范围内的所有操作都可以全部成功或者全部失败。如果事务失败，那么效果就和没有执行这些 SQL 一样，不会对数据库数据有任何改动。<br /></p>
+<ul>
+<li><code>BEGIN</code> 开启一个事务</li>
+<li><code>COMMIT</code> 提交一个事务</li>
+<li><code>ROLLBACK</code> 回滚事务</li>
+</ul>
+<p><a name="2000d45b"></a></p>
+<h3 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a>隔离级别</h3><ul>
+<li><strong>脏读 DIRTY READ</strong>： 查询同一记录，2 次结果<strong>不一样</strong>，读到还未 commit 的数据结果；</li>
+<li><strong>不可重复读 NON REPEATABLE READ</strong>： 查询同一记录，2 次结果<strong>不一样</strong>，读到的结果在另一事务 commit/rollback 之间；</li>
+<li><strong>幻读 PHANTOM READ</strong>：查询同一记录，2 次结果是<strong>一样</strong>，但是会出现 事务 A 新增的列，事务 B 读不到(<code>SELECT</code>)，但是却可以更新(<code>UPDATE</code>)，更新后才可以读到。<table>
+<thead>
+<tr>
+<th>ISOLATION LEVEL</th>
+<th>DIRTY READ</th>
+<th>NON REPEATABLE READ</th>
+<th>PHANTOM READ</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>READ UNCOMMITTED</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>READ COMMITTED</td>
+<td>-</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>Repeatable Read</td>
+<td>-</td>
+<td>-</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>Serializable</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<p><br /><strong>Serializable</strong> 虽然隔离级别最高，但是效率会大大下降。</p>
 
       
     </div>
@@ -396,7 +622,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://preference-y.github.io/2020/09/22/hexo%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/" title="hexo搭建的博客增加搜索功能" target="_blank" rel="external">https://preference-y.github.io/2020/09/22/hexo%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/</a>
+      <a href="https://preference-y.github.io/2020/09/22/SQL%E7%AC%94%E8%AE%B0/" title="SQL笔记" target="_blank" rel="external">https://preference-y.github.io/2020/09/22/SQL%E7%AC%94%E8%AE%B0/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -442,13 +668,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2020/09/22/SQL%E7%AC%94%E8%AE%B0/" title="SQL笔记"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2020/09/21/Git%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AASSHkey/" title="Git配置多个SSHkey"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2020/09/22/hexo%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/" title="hexo搭建的博客增加搜索功能"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
