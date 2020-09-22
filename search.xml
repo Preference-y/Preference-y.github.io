@@ -462,12 +462,6 @@
       </tags>
   </entry>
   <entry>
-    <title>我的第一篇博客</title>
-    <url>/2020/06/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>##第一章 内容 ——–<br>##第二章 内容 ——–<br>##第三章 内容 ——–<br>##参考文献 内容</p>
-]]></content>
-  </entry>
-  <entry>
     <title>hexo搭建的博客增加搜索功能</title>
     <url>/2020/09/22/hexo%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/</url>
     <content><![CDATA[<p><a name="aNUKB"></a></p>
@@ -489,9 +483,15 @@
       </tags>
   </entry>
   <entry>
+    <title>我的第一篇博客</title>
+    <url>/2020/06/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>##第一章 内容 ——–<br>##第二章 内容 ——–<br>##第三章 内容 ——–<br>##参考文献 内容</p>
+]]></content>
+  </entry>
+  <entry>
     <title>解决git@github.com: Permission denied (publickey).</title>
     <url>/2020/09/21/%E8%A7%A3%E5%86%B3git-github-com-Permission-denied-publickey/</url>
-    <content><![CDATA[<h1 id="解决-103-x69-116-x40-x67-105-116-x68-117-x62-46-x63-111-x6d-Permission-denied-publickey"><a href="#解决-103-x69-116-x40-x67-105-116-x68-117-x62-46-x63-111-x6d-Permission-denied-publickey" class="headerlink" title="解决&#103;&#x69;&#116;&#x40;&#x67;&#105;&#116;&#x68;&#117;&#x62;&#46;&#x63;&#111;&#x6d;: Permission denied (publickey)."></a>解决<a href="mailto:&#103;&#x69;&#116;&#x40;&#x67;&#105;&#116;&#x68;&#117;&#x62;&#46;&#x63;&#111;&#x6d;">&#103;&#x69;&#116;&#x40;&#x67;&#105;&#116;&#x68;&#117;&#x62;&#46;&#x63;&#111;&#x6d;</a>: Permission denied (publickey).</h1><p><strong><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600691414505-8704740b-63d0-4842-8287-b80d8c9c6463.png#align=left&display=inline&height=271&margin=%5Bobject%20Object%5D&name=image.png&originHeight=271&originWidth=672&size=127432&status=done&style=none&width=672" alt="image.png"></strong><br /><strong>原因分析</strong><br />Permission denied (publickey) 没有权限的publickey ，<br />出现这错误一般是以下两种原因</p>
+    <content><![CDATA[<h1 id="解决-x67-x69-116-x40-103-x69-116-104-117-x62-x2e-x63-111-x6d-Permission-denied-publickey"><a href="#解决-x67-x69-116-x40-103-x69-116-104-117-x62-x2e-x63-111-x6d-Permission-denied-publickey" class="headerlink" title="解决&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#x6d;: Permission denied (publickey)."></a>解决<a href="mailto:&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#x6d;">&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#x6d;</a>: Permission denied (publickey).</h1><p><strong><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600691414505-8704740b-63d0-4842-8287-b80d8c9c6463.png#align=left&display=inline&height=271&margin=%5Bobject%20Object%5D&name=image.png&originHeight=271&originWidth=672&size=127432&status=done&style=none&width=672" alt="image.png"></strong><br /><strong>原因分析</strong><br />Permission denied (publickey) 没有权限的publickey ，<br />出现这错误一般是以下两种原因</p>
 <ul>
 <li>客户端与服务端未生成 ssh key</li>
 <li>客户端与服务端的ssh key不匹配</li>
