@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  
+  <link href="https://preference-y.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://preference-y.github.io/"/>
+  <updated>2020-09-22T11:06:47.484Z</updated>
+  <id>https://preference-y.github.io/</id>
+  
+  <author>
+    <name>Ning</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo博客的pure主题添加动态背景</title>
+    <link href="https://preference-y.github.io/2020/09/22/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84pure%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E5%8A%A8%E6%80%81%E8%83%8C%E6%99%AF/"/>
+    <id>https://preference-y.github.io/2020/09/22/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84pure%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E5%8A%A8%E6%80%81%E8%83%8C%E6%99%AF/</id>
+    <published>2020-09-22T11:05:59.000Z</published>
+    <updated>2020-09-22T11:06:47.484Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a name=&quot;w4BJt&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;修改-layout-ejs&quot;&gt;&lt;a href=&quot;#修改-layout-ejs&quot; class=&quot;headerlink&quot; title=&quot;修改 _layout.ejs&quot;&gt;&lt;/a&gt;修改 _layout.ejs&lt;/h4</summary>
+      
+    
+    
+    
+    
+    <category term="笔记" scheme="https://preference-y.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux命令操作大全</title>
+    <link href="https://preference-y.github.io/2020/09/22/Linux%E5%91%BD%E4%BB%A4%E6%93%8D%E4%BD%9C%E5%A4%A7%E5%85%A8/"/>
+    <id>https://preference-y.github.io/2020/09/22/Linux%E5%91%BD%E4%BB%A4%E6%93%8D%E4%BD%9C%E5%A4%A7%E5%85%A8/</id>
+    <published>2020-09-22T10:19:30.000Z</published>
+    <updated>2020-09-22T10:20:19.392Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a name=&quot;UMAS8&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;1-系统信息&quot;&gt;&lt;a href=&quot;#1-系统信息&quot; class=&quot;headerlink&quot; title=&quot;1.系统信息&quot;&gt;&lt;/a&gt;1.系统信息&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th alig</summary>
+      
+    
+    
+    
+    
+    <category term="笔记" scheme="https://preference-y.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SQL笔记</title>
+    <link href="https://preference-y.github.io/2020/09/22/SQL%E7%AC%94%E8%AE%B0/"/>
+    <id>https://preference-y.github.io/2020/09/22/SQL%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-09-22T10:06:55.000Z</published>
+    <updated>2020-09-22T10:08:06.028Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a name=&quot;e28d2d92&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;SQL-简介&quot;&gt;&lt;a href=&quot;#SQL-简介&quot; class=&quot;headerlink&quot; title=&quot;SQL 简介&quot;&gt;&lt;/a&gt;SQL 简介&lt;/h2&gt;&lt;p&gt;&lt;br /&gt;SQL = Structured </summary>
+      
+    
+    
+    
+    
+    <category term="笔记" scheme="https://preference-y.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo搭建的博客增加搜索功能</title>
+    <link href="https://preference-y.github.io/2020/09/22/hexo%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/"/>
+    <id>https://preference-y.github.io/2020/09/22/hexo%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/</id>
+    <published>2020-09-22T09:16:48.000Z</published>
+    <updated>2020-09-22T09:17:51.878Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a name=&quot;aNUKB&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;具体操作&quot;&gt;&lt;a href=&quot;#具体操作&quot; class=&quot;headerlink&quot; title=&quot;具体操作&quot;&gt;&lt;/a&gt;具体操作&lt;/h2&gt;&lt;p&gt;1.安装搜索：在Hexo的根目录下，打开命令可执行窗口，执行如下命令</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Git配置多个SSHkey</title>
+    <link href="https://preference-y.github.io/2020/09/21/Git%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AASSHkey/"/>
+    <id>https://preference-y.github.io/2020/09/21/Git%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AASSHkey/</id>
+    <published>2020-09-21T13:13:30.000Z</published>
+    <updated>2020-09-21T13:13:51.557Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a name=&quot;article-header0&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h3&gt;&lt;p&gt;当有多个git账号时，比如：&lt;br /&gt;a. 一个gitee，用</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>解决git@github.com: Permission denied (publickey).</title>
+    <link href="https://preference-y.github.io/2020/09/21/%E8%A7%A3%E5%86%B3git-github-com-Permission-denied-publickey/"/>
+    <id>https://preference-y.github.io/2020/09/21/%E8%A7%A3%E5%86%B3git-github-com-Permission-denied-publickey/</id>
+    <published>2020-09-21T13:04:18.000Z</published>
+    <updated>2020-09-21T13:05:35.208Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;解决git-github-com-Permission-denied-publickey&quot;&gt;&lt;a href=&quot;#解决git-github-com-Permission-denied-publickey&quot; class=&quot;headerlink&quot; title=&quot;解决gi</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>git常用命令</title>
+    <link href="https://preference-y.github.io/2020/09/21/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>https://preference-y.github.io/2020/09/21/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</id>
+    <published>2020-09-21T11:56:46.105Z</published>
+    <updated>2020-09-21T12:24:01.794Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;一般来说，日常使用只要记住下图6个命令。&quot;&gt;&lt;a href=&quot;#一般来说，日常使用只要记住下图6个命令。&quot; class=&quot;headerlink&quot; title=&quot;一般来说，日常使用只要记住下图6个命令。&quot;&gt;&lt;/a&gt;一般来说，日常使用只要记住下图6个命令。&lt;/h1&gt;&lt;</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>我的第一篇博客</title>
+    <link href="https://preference-y.github.io/2020/06/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://preference-y.github.io/2020/06/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</id>
+    <published>2020-06-07T10:16:54.000Z</published>
+    <updated>2020-06-07T10:18:43.354Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://preference-y.github.io/2020/06/07/hello-world/"/>
+    <id>https://preference-y.github.io/2020/06/07/hello-world/</id>
+    <published>2020-06-07T08:48:03.197Z</published>
+    <updated>2020-06-07T08:48:03.197Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
