@@ -321,6 +321,21 @@
       </tags>
   </entry>
   <entry>
+    <title>git中fatal: Authentication failed的问题</title>
+    <url>/2020/09/23/git%E4%B8%ADfatal-Authentication-failed%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p><a name="GmEx1"></a></p>
+<h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述:"></a>问题描述:</h4><p>有些情况下, 在进行git的远程操作的情况下, 会报一个这样的错误<code>fatal: Authentication failed for &#39;http://对应的git仓库项目地址&#39;;</code><br><a name="h3Ur8"></a></p>
+<h4 id="分析问题"><a href="#分析问题" class="headerlink" title="分析问题:"></a>分析问题:</h4><p>报错的意思是凭证失效;<br />我遇到的情况比较尴尬，手残输入了错误的密码，结果就一直报错，不再弹出输入账号密码的弹窗；<br><a name="1sAtm"></a></p>
+<h4 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题:"></a>解决问题:</h4><p>1.在控制面板下找到凭据管理器, 如下图:<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1599741607840-a0408d9f-7697-4f6e-a9c5-1b5d33408264.png#align=left&display=inline&height=397&margin=%5Bobject%20Object%5D&originHeight=397&originWidth=800&size=0&status=done&style=none&width=800"><br /><br><br />2.点进去, 选择Windows凭据, 然后选择对应的那一条git凭据进行修改或者删除就OK.<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1599741608076-c16239ae-2077-458e-b37a-d87b5a445e35.png#align=left&display=inline&height=483&margin=%5Bobject%20Object%5D&originHeight=483&originWidth=800&size=0&status=done&style=none&width=800"><br />3.再次进行git操作时输入账号密码即可.</p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>git常用命令</title>
     <url>/2020/09/21/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<h1 id="一般来说，日常使用只要记住下图6个命令。"><a href="#一般来说，日常使用只要记住下图6个命令。" class="headerlink" title="一般来说，日常使用只要记住下图6个命令。"></a>一般来说，日常使用只要记住下图6个命令。</h1><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png" alt="img"></p>
@@ -371,21 +386,6 @@
       </categories>
       <tags>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>git中fatal: Authentication failed的问题</title>
-    <url>/2020/09/23/git%E4%B8%ADfatal-Authentication-failed%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p><a name="GmEx1"></a></p>
-<h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述:"></a>问题描述:</h4><p>有些情况下, 在进行git的远程操作的情况下, 会报一个这样的错误<code>fatal: Authentication failed for &#39;http://对应的git仓库项目地址&#39;;</code><br><a name="h3Ur8"></a></p>
-<h4 id="分析问题"><a href="#分析问题" class="headerlink" title="分析问题:"></a>分析问题:</h4><p>报错的意思是凭证失效;<br />我遇到的情况比较尴尬，手残输入了错误的密码，结果就一直报错，不再弹出输入账号密码的弹窗；<br><a name="1sAtm"></a></p>
-<h4 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题:"></a>解决问题:</h4><p>1.在控制面板下找到凭据管理器, 如下图:<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1599741607840-a0408d9f-7697-4f6e-a9c5-1b5d33408264.png#align=left&display=inline&height=397&margin=%5Bobject%20Object%5D&originHeight=397&originWidth=800&size=0&status=done&style=none&width=800"><br /><br><br />2.点进去, 选择Windows凭据, 然后选择对应的那一条git凭据进行修改或者删除就OK.<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1599741608076-c16239ae-2077-458e-b37a-d87b5a445e35.png#align=left&display=inline&height=483&margin=%5Bobject%20Object%5D&originHeight=483&originWidth=800&size=0&status=done&style=none&width=800"><br />3.再次进行git操作时输入账号密码即可.</p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -491,7 +491,7 @@
   <entry>
     <title>解决git@github.com: Permission denied (publickey).</title>
     <url>/2020/09/21/%E8%A7%A3%E5%86%B3git-github-com-Permission-denied-publickey/</url>
-    <content><![CDATA[<h1 id="解决-x67-105-116-x40-103-105-116-104-x75-98-x2e-99-x6f-x6d-Permission-denied-publickey"><a href="#解决-x67-105-116-x40-103-105-116-104-x75-98-x2e-99-x6f-x6d-Permission-denied-publickey" class="headerlink" title="解决&#x67;&#105;&#116;&#x40;&#103;&#105;&#116;&#104;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;: Permission denied (publickey)."></a>解决<a href="mailto:&#x67;&#105;&#116;&#x40;&#103;&#105;&#116;&#104;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;">&#x67;&#105;&#116;&#x40;&#103;&#105;&#116;&#104;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;</a>: Permission denied (publickey).</h1><p><strong><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600691414505-8704740b-63d0-4842-8287-b80d8c9c6463.png#align=left&display=inline&height=271&margin=%5Bobject%20Object%5D&name=image.png&originHeight=271&originWidth=672&size=127432&status=done&style=none&width=672" alt="image.png"></strong><br /><strong>原因分析</strong><br />Permission denied (publickey) 没有权限的publickey ，<br />出现这错误一般是以下两种原因</p>
+    <content><![CDATA[<h1 id="解决-103-105-116-x40-x67-x69-116-x68-x75-x62-x2e-x63-111-x6d-Permission-denied-publickey"><a href="#解决-103-105-116-x40-x67-x69-116-x68-x75-x62-x2e-x63-111-x6d-Permission-denied-publickey" class="headerlink" title="解决&#103;&#105;&#116;&#x40;&#x67;&#x69;&#116;&#x68;&#x75;&#x62;&#x2e;&#x63;&#111;&#x6d;: Permission denied (publickey)."></a>解决<a href="mailto:&#103;&#105;&#116;&#x40;&#x67;&#x69;&#116;&#x68;&#x75;&#x62;&#x2e;&#x63;&#111;&#x6d;">&#103;&#105;&#116;&#x40;&#x67;&#x69;&#116;&#x68;&#x75;&#x62;&#x2e;&#x63;&#111;&#x6d;</a>: Permission denied (publickey).</h1><p><strong><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600691414505-8704740b-63d0-4842-8287-b80d8c9c6463.png#align=left&display=inline&height=271&margin=%5Bobject%20Object%5D&name=image.png&originHeight=271&originWidth=672&size=127432&status=done&style=none&width=672" alt="image.png"></strong><br /><strong>原因分析</strong><br />Permission denied (publickey) 没有权限的publickey ，<br />出现这错误一般是以下两种原因</p>
 <ul>
 <li>客户端与服务端未生成 ssh key</li>
 <li>客户端与服务端的ssh key不匹配</li>
@@ -517,6 +517,24 @@
       </categories>
       <tags>
         <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决hexo搭建的博客的翻页箭头显示代码bug</title>
+    <url>/2020/09/23/%E8%A7%A3%E5%86%B3hexo%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%BF%BB%E9%A1%B5%E7%AE%AD%E5%A4%B4%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81bug/</url>
+    <content><![CDATA[<p><a name="ircwS"></a></p>
+<h3 id="问题场景："><a href="#问题场景：" class="headerlink" title="问题场景："></a>问题场景：</h3><p><strong>hexo博客pure主题，分页显示bug，将代码显示出来了；</strong><br />如下所示：<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600796007324-bbb063ec-6f18-4a95-a78d-c696cea50549.png#align=left&display=inline&height=146&margin=%5Bobject%20Object%5D&originHeight=146&originWidth=1204&size=0&status=done&style=none&width=1204"><br /><strong>搭建好博客，上传文章数量多到需要分页时，发现翻页箭头显示了代码。。。 而不是’&gt;’</strong><br><a name="8z70g"></a></p>
+<h3 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h3><p><strong>找到 pagination.ejs中的 paginator 函数，添加 escape: false 试试，代码形如</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;%- paginator(&#123;</span><br><span class="line">                prev_text: &#39;&lt;i class&#x3D;&quot;icon icon-angle-left&quot;&gt;&lt;&#x2F;i&gt; &#39; + __(&#39;pagination.prev&#39;),</span><br><span class="line">                next_text: __(&#39;pagination.next&#39;) + &#39; &lt;i class&#x3D;&quot;icon icon-angle-right&quot;&gt;&lt;&#x2F;i&gt;&#39;,</span><br><span class="line">                escape: false</span><br><span class="line">            &#125;) %&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600796308874-4dcc4bb8-639b-4e42-917a-6a1332280c56.png#align=left&display=inline&height=279&margin=%5Bobject%20Object%5D&name=image.png&originHeight=279&originWidth=1106&size=42215&status=done&style=none&width=1106" alt="image.png"><br><a name="feVmL"></a></p>
+<h3 id="恢复正常："><a href="#恢复正常：" class="headerlink" title="恢复正常："></a>恢复正常：</h3><p><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600796621318-bad385ff-9dac-4b86-b49f-5306f47aaf83.png#align=left&display=inline&height=179&margin=%5Bobject%20Object%5D&name=image.png&originHeight=179&originWidth=519&size=14438&status=done&style=none&width=519" alt="image.png"></p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>bug</tag>
       </tags>
   </entry>
   <entry>

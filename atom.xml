@@ -6,7 +6,7 @@
   <link href="https://preference-y.github.io/atom.xml" rel="self"/>
   
   <link href="https://preference-y.github.io/"/>
-  <updated>2020-09-22T17:02:57.078Z</updated>
+  <updated>2020-09-22T17:47:29.731Z</updated>
   <id>https://preference-y.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决hexo搭建的博客的翻页箭头显示代码bug</title>
+    <link href="https://preference-y.github.io/2020/09/23/%E8%A7%A3%E5%86%B3hexo%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%BF%BB%E9%A1%B5%E7%AE%AD%E5%A4%B4%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81bug/"/>
+    <id>https://preference-y.github.io/2020/09/23/%E8%A7%A3%E5%86%B3hexo%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%BF%BB%E9%A1%B5%E7%AE%AD%E5%A4%B4%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81bug/</id>
+    <published>2020-09-22T17:45:24.000Z</published>
+    <updated>2020-09-22T17:47:29.731Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a name=&quot;ircwS&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;问题场景：&quot;&gt;&lt;a href=&quot;#问题场景：&quot; class=&quot;headerlink&quot; title=&quot;问题场景：&quot;&gt;&lt;/a&gt;问题场景：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;hexo博客pure主题，分页显示bug，将</summary>
+      
+    
+    
+    
+    <category term="笔记" scheme="https://preference-y.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="hexo" scheme="https://preference-y.github.io/tags/hexo/"/>
+    
+    <category term="bug" scheme="https://preference-y.github.io/tags/bug/"/>
+    
+  </entry>
   
   <entry>
     <title>git中fatal: Authentication failed的问题</title>
@@ -238,7 +263,7 @@
     
       
       
-    <summary type="html">&lt;h1 id=&quot;解决-x67-105-116-x40-103-105-116-104-x75-98-x2e-99-x6f-x6d-Permission-denied-publickey&quot;&gt;&lt;a href=&quot;#解决-x67-105-116-x40-103-105-116-104-x</summary>
+    <summary type="html">&lt;h1 id=&quot;解决-103-105-116-x40-x67-x69-116-x68-x75-x62-x2e-x63-111-x6d-Permission-denied-publickey&quot;&gt;&lt;a href=&quot;#解决-103-105-116-x40-x67-x69-116-x68</summary>
       
     
     
