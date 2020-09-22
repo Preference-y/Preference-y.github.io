@@ -321,21 +321,6 @@
       </tags>
   </entry>
   <entry>
-    <title>git中fatal: Authentication failed的问题</title>
-    <url>/2020/09/23/git%E4%B8%ADfatal-Authentication-failed%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p><a name="GmEx1"></a></p>
-<h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述:"></a>问题描述:</h4><p>有些情况下, 在进行git的远程操作的情况下, 会报一个这样的错误<code>fatal: Authentication failed for &#39;http://对应的git仓库项目地址&#39;;</code><br><a name="h3Ur8"></a></p>
-<h4 id="分析问题"><a href="#分析问题" class="headerlink" title="分析问题:"></a>分析问题:</h4><p>报错的意思是凭证失效;<br />我遇到的情况比较尴尬，手残输入了错误的密码，结果就一直报错，不再弹出输入账号密码的弹窗；<br><a name="1sAtm"></a></p>
-<h4 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题:"></a>解决问题:</h4><p>1.在控制面板下找到凭据管理器, 如下图:<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1599741607840-a0408d9f-7697-4f6e-a9c5-1b5d33408264.png#align=left&display=inline&height=397&margin=%5Bobject%20Object%5D&originHeight=397&originWidth=800&size=0&status=done&style=none&width=800"><br /><br><br />2.点进去, 选择Windows凭据, 然后选择对应的那一条git凭据进行修改或者删除就OK.<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1599741608076-c16239ae-2077-458e-b37a-d87b5a445e35.png#align=left&display=inline&height=483&margin=%5Bobject%20Object%5D&originHeight=483&originWidth=800&size=0&status=done&style=none&width=800"><br />3.再次进行git操作时输入账号密码即可.</p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>git常用命令</title>
     <url>/2020/09/21/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<h1 id="一般来说，日常使用只要记住下图6个命令。"><a href="#一般来说，日常使用只要记住下图6个命令。" class="headerlink" title="一般来说，日常使用只要记住下图6个命令。"></a>一般来说，日常使用只要记住下图6个命令。</h1><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png" alt="img"></p>
@@ -386,6 +371,21 @@
       </categories>
       <tags>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git中fatal: Authentication failed的问题</title>
+    <url>/2020/09/23/git%E4%B8%ADfatal-Authentication-failed%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p><a name="GmEx1"></a></p>
+<h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述:"></a>问题描述:</h4><p>有些情况下, 在进行git的远程操作的情况下, 会报一个这样的错误<code>fatal: Authentication failed for &#39;http://对应的git仓库项目地址&#39;;</code><br><a name="h3Ur8"></a></p>
+<h4 id="分析问题"><a href="#分析问题" class="headerlink" title="分析问题:"></a>分析问题:</h4><p>报错的意思是凭证失效;<br />我遇到的情况比较尴尬，手残输入了错误的密码，结果就一直报错，不再弹出输入账号密码的弹窗；<br><a name="1sAtm"></a></p>
+<h4 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题:"></a>解决问题:</h4><p>1.在控制面板下找到凭据管理器, 如下图:<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1599741607840-a0408d9f-7697-4f6e-a9c5-1b5d33408264.png#align=left&display=inline&height=397&margin=%5Bobject%20Object%5D&originHeight=397&originWidth=800&size=0&status=done&style=none&width=800"><br /><br><br />2.点进去, 选择Windows凭据, 然后选择对应的那一条git凭据进行修改或者删除就OK.<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1599741608076-c16239ae-2077-458e-b37a-d87b5a445e35.png#align=left&display=inline&height=483&margin=%5Bobject%20Object%5D&originHeight=483&originWidth=800&size=0&status=done&style=none&width=800"><br />3.再次进行git操作时输入账号密码即可.</p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -462,6 +462,12 @@
       </tags>
   </entry>
   <entry>
+    <title>我的第一篇博客</title>
+    <url>/2020/06/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>##第一章 内容 ——–<br>##第二章 内容 ——–<br>##第三章 内容 ——–<br>##参考文献 内容</p>
+]]></content>
+  </entry>
+  <entry>
     <title>hexo搭建的博客增加搜索功能</title>
     <url>/2020/09/22/hexo%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/</url>
     <content><![CDATA[<p><a name="aNUKB"></a></p>
@@ -483,15 +489,9 @@
       </tags>
   </entry>
   <entry>
-    <title>我的第一篇博客</title>
-    <url>/2020/06/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>##第一章 内容 ——–<br>##第二章 内容 ——–<br>##第三章 内容 ——–<br>##参考文献 内容</p>
-]]></content>
-  </entry>
-  <entry>
     <title>解决git@github.com: Permission denied (publickey).</title>
     <url>/2020/09/21/%E8%A7%A3%E5%86%B3git-github-com-Permission-denied-publickey/</url>
-    <content><![CDATA[<h1 id="解决-x67-x69-116-x40-103-x69-116-104-117-x62-x2e-x63-111-x6d-Permission-denied-publickey"><a href="#解决-x67-x69-116-x40-103-x69-116-104-117-x62-x2e-x63-111-x6d-Permission-denied-publickey" class="headerlink" title="解决&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#x6d;: Permission denied (publickey)."></a>解决<a href="mailto:&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#x6d;">&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#x6d;</a>: Permission denied (publickey).</h1><p><strong><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600691414505-8704740b-63d0-4842-8287-b80d8c9c6463.png#align=left&display=inline&height=271&margin=%5Bobject%20Object%5D&name=image.png&originHeight=271&originWidth=672&size=127432&status=done&style=none&width=672" alt="image.png"></strong><br /><strong>原因分析</strong><br />Permission denied (publickey) 没有权限的publickey ，<br />出现这错误一般是以下两种原因</p>
+    <content><![CDATA[<h1 id="解决-103-105-116-x40-x67-105-116-x68-x75-98-46-x63-111-109-Permission-denied-publickey"><a href="#解决-103-105-116-x40-x67-105-116-x68-x75-98-46-x63-111-109-Permission-denied-publickey" class="headerlink" title="解决&#103;&#105;&#116;&#x40;&#x67;&#105;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#111;&#109;: Permission denied (publickey)."></a>解决<a href="mailto:&#103;&#105;&#116;&#x40;&#x67;&#105;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#111;&#109;">&#103;&#105;&#116;&#x40;&#x67;&#105;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#111;&#109;</a>: Permission denied (publickey).</h1><p><strong><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600691414505-8704740b-63d0-4842-8287-b80d8c9c6463.png#align=left&display=inline&height=271&margin=%5Bobject%20Object%5D&name=image.png&originHeight=271&originWidth=672&size=127432&status=done&style=none&width=672" alt="image.png"></strong><br /><strong>原因分析</strong><br />Permission denied (publickey) 没有权限的publickey ，<br />出现这错误一般是以下两种原因</p>
 <ul>
 <li>客户端与服务端未生成 ssh key</li>
 <li>客户端与服务端的ssh key不匹配</li>
