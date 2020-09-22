@@ -87,6 +87,11 @@
 ]]></content>
   </entry>
   <entry>
+    <title>我的第一篇博客</title>
+    <url>/2020/06/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>解决git@github.com: Permission denied (publickey).</title>
     <url>/2020/09/21/%E8%A7%A3%E5%86%B3git-github-com-Permission-denied-publickey/</url>
     <content><![CDATA[<h1 id="解决git-github-com-Permission-denied-publickey"><a href="#解决git-github-com-Permission-denied-publickey" class="headerlink" title="解决git@github.com: Permission denied (publickey)."></a>解决<a href="mailto:git@github.com">git@github.com</a>: Permission denied (publickey).</h1><p><strong><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600691414505-8704740b-63d0-4842-8287-b80d8c9c6463.png#align=left&display=inline&height=271&margin=%5Bobject%20Object%5D&name=image.png&originHeight=271&originWidth=672&size=127432&status=done&style=none&width=672" alt="image.png"></strong><br /><strong>原因分析</strong><br />Permission denied (publickey) 没有权限的publickey ，<br />出现这错误一般是以下两种原因</p>
@@ -110,10 +115,5 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh-add ~&#x2F;.ssh&#x2F;id_rsa</span><br><span class="line"></span><br><span class="line">id_rsa是私钥的名字</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p><strong>如果执行后，提示执行ssh-add时出现Could not open a connection to your authentication agent</strong><br /><strong>执行如下命令　ssh-agent bash<br />然后再执行 ssh-add ~/.ssh/id_rsa即可。</strong><br /><br><br />Identity added: …这是ssh key文件路径的信息<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600599762026-9b6cfa7b-2fbe-4cc5-9413-27916534ea3b.png#align=left&display=inline&height=631&margin=%5Bobject%20Object%5D&name=image.png&originHeight=631&originWidth=884&size=469528&status=done&style=none&width=884" alt="image.png"></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>我的第一篇博客</title>
-    <url>/2020/06/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[]]></content>
   </entry>
 </search>
