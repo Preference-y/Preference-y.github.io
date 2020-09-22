@@ -1,33 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Git配置多个SSHkey</title>
-    <url>/2020/09/21/Git%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AASSHkey/</url>
-    <content><![CDATA[<p><a name="article-header0"></a></p>
-<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>当有多个git账号时，比如：<br />a. 一个gitee，用于公司内部的工作开发；<br />b. 一个github，用于自己进行一些开发活动；<br><a name="article-header1"></a></p>
-<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><ol>
-<li>生成一个公司用的SSH-Key</li>
-</ol>
-<p><code>$ ssh-keygen -t rsa -C &#39;xxxxx@company.com&#39; -f ~/.ssh/gitee_id_rsa</code></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">(注意修改为自己的 email ) </span><br><span class="line">ssh-keygen -t rsa -C &#x27;xxxxx@company.com&#x27; -f ~/.ssh/gitee_id_rsa</span><br><span class="line"> </span><br><span class="line"> 代码参数含义：</span><br><span class="line"></span><br><span class="line">-t 指定密钥类型，默认是 rsa ，可以省略。</span><br><span class="line">-C 设置注释文字，比如邮箱。</span><br><span class="line">-f 指定密钥文件存储文件名。</span><br><span class="line"></span><br><span class="line">注：可全部选择默认即为空格跳过</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600592788808-48350c9b-b92a-4d54-94da-ad0a6daf19c9.png#align=left&display=inline&height=422&margin=%5Bobject%20Object%5D&name=image.png&originHeight=422&originWidth=881&size=337950&status=done&style=none&width=881" alt="image.png"></p>
-<ol start="2">
-<li>生成一个github用的SSH-Key</li>
-</ol>
-<p><code>$ ssh-keygen -t rsa -C &#39;xxxxx@qq.com&#39; -f ~/.ssh/github_id_rsa</code></p>
-<ol start="3">
-<li>在 ~/.ssh 目录下新建一个config文件，添加如下内容（其中Host和HostName填写git服务器的域名，IdentityFile指定私钥的路径）<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> gitee</span></span><br><span class="line">Host gitee.com</span><br><span class="line">HostName gitee.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/gitee_id_rsa</span><br><span class="line"><span class="meta">#</span><span class="bash"> github</span></span><br><span class="line">Host github.com</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/github_id_rsa</span><br></pre></td></tr></table></figure></li>
-<li>用ssh命令分别测试<br /><code>$ ssh -T git@gitee.com</code><br /><code>$ ssh -T git@github.com</code><br />这里以gitee为例，成功的话会返回下图内容<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600693883785-f2d24c00-be1c-4281-a896-b0b96018a4d0.png#align=left&display=inline&height=160&margin=%5Bobject%20Object%5D&name=image.png&originHeight=160&originWidth=852&size=140561&status=done&style=none&width=852" alt="image.png"><br /></li>
-</ol>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Fiddler 弱网测试</title>
     <url>/2020/09/23/Fiddler-%E5%BC%B1%E7%BD%91%E6%B5%8B%E8%AF%95/</url>
     <content><![CDATA[<p><a name="zkS6E"></a></p>
@@ -82,6 +55,33 @@
       <tags>
         <tag>Fiddler</tag>
         <tag>抓包</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git配置多个SSHkey</title>
+    <url>/2020/09/21/Git%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AASSHkey/</url>
+    <content><![CDATA[<p><a name="article-header0"></a></p>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>当有多个git账号时，比如：<br />a. 一个gitee，用于公司内部的工作开发；<br />b. 一个github，用于自己进行一些开发活动；<br><a name="article-header1"></a></p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><ol>
+<li>生成一个公司用的SSH-Key</li>
+</ol>
+<p><code>$ ssh-keygen -t rsa -C &#39;xxxxx@company.com&#39; -f ~/.ssh/gitee_id_rsa</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">(注意修改为自己的 email ) </span><br><span class="line">ssh-keygen -t rsa -C &#x27;xxxxx@company.com&#x27; -f ~/.ssh/gitee_id_rsa</span><br><span class="line"> </span><br><span class="line"> 代码参数含义：</span><br><span class="line"></span><br><span class="line">-t 指定密钥类型，默认是 rsa ，可以省略。</span><br><span class="line">-C 设置注释文字，比如邮箱。</span><br><span class="line">-f 指定密钥文件存储文件名。</span><br><span class="line"></span><br><span class="line">注：可全部选择默认即为空格跳过</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600592788808-48350c9b-b92a-4d54-94da-ad0a6daf19c9.png#align=left&display=inline&height=422&margin=%5Bobject%20Object%5D&name=image.png&originHeight=422&originWidth=881&size=337950&status=done&style=none&width=881" alt="image.png"></p>
+<ol start="2">
+<li>生成一个github用的SSH-Key</li>
+</ol>
+<p><code>$ ssh-keygen -t rsa -C &#39;xxxxx@qq.com&#39; -f ~/.ssh/github_id_rsa</code></p>
+<ol start="3">
+<li>在 ~/.ssh 目录下新建一个config文件，添加如下内容（其中Host和HostName填写git服务器的域名，IdentityFile指定私钥的路径）<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> gitee</span></span><br><span class="line">Host gitee.com</span><br><span class="line">HostName gitee.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/gitee_id_rsa</span><br><span class="line"><span class="meta">#</span><span class="bash"> github</span></span><br><span class="line">Host github.com</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/github_id_rsa</span><br></pre></td></tr></table></figure></li>
+<li>用ssh命令分别测试<br /><code>$ ssh -T git@gitee.com</code><br /><code>$ ssh -T git@github.com</code><br />这里以gitee为例，成功的话会返回下图内容<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600693883785-f2d24c00-be1c-4281-a896-b0b96018a4d0.png#align=left&display=inline&height=160&margin=%5Bobject%20Object%5D&name=image.png&originHeight=160&originWidth=852&size=140561&status=done&style=none&width=852" alt="image.png"><br /></li>
+</ol>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -321,6 +321,21 @@
       </tags>
   </entry>
   <entry>
+    <title>git中fatal: Authentication failed的问题</title>
+    <url>/2020/09/23/git%E4%B8%ADfatal-Authentication-failed%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p><a name="GmEx1"></a></p>
+<h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述:"></a>问题描述:</h4><p>有些情况下, 在进行git的远程操作的情况下, 会报一个这样的错误<code>fatal: Authentication failed for &#39;http://对应的git仓库项目地址&#39;;</code><br><a name="h3Ur8"></a></p>
+<h4 id="分析问题"><a href="#分析问题" class="headerlink" title="分析问题:"></a>分析问题:</h4><p>报错的意思是凭证失效;<br />我遇到的情况比较尴尬，手残输入了错误的密码，结果就一直报错，不再弹出输入账号密码的弹窗；<br><a name="1sAtm"></a></p>
+<h4 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题:"></a>解决问题:</h4><p>1.在控制面板下找到凭据管理器, 如下图:<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1599741607840-a0408d9f-7697-4f6e-a9c5-1b5d33408264.png#align=left&display=inline&height=397&margin=%5Bobject%20Object%5D&originHeight=397&originWidth=800&size=0&status=done&style=none&width=800"><br /><br><br />2.点进去, 选择Windows凭据, 然后选择对应的那一条git凭据进行修改或者删除就OK.<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1599741608076-c16239ae-2077-458e-b37a-d87b5a445e35.png#align=left&display=inline&height=483&margin=%5Bobject%20Object%5D&originHeight=483&originWidth=800&size=0&status=done&style=none&width=800"><br />3.再次进行git操作时输入账号密码即可.</p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>git常用命令</title>
     <url>/2020/09/21/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<h1 id="一般来说，日常使用只要记住下图6个命令。"><a href="#一般来说，日常使用只要记住下图6个命令。" class="headerlink" title="一般来说，日常使用只要记住下图6个命令。"></a>一般来说，日常使用只要记住下图6个命令。</h1><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png" alt="img"></p>
@@ -371,21 +386,6 @@
       </categories>
       <tags>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>git中fatal: Authentication failed的问题</title>
-    <url>/2020/09/23/git%E4%B8%ADfatal-Authentication-failed%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p><a name="GmEx1"></a></p>
-<h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述:"></a>问题描述:</h4><p>有些情况下, 在进行git的远程操作的情况下, 会报一个这样的错误<code>fatal: Authentication failed for &#39;http://对应的git仓库项目地址&#39;;</code><br><a name="h3Ur8"></a></p>
-<h4 id="分析问题"><a href="#分析问题" class="headerlink" title="分析问题:"></a>分析问题:</h4><p>报错的意思是凭证失效;<br />我遇到的情况比较尴尬，手残输入了错误的密码，结果就一直报错，不再弹出输入账号密码的弹窗；<br><a name="1sAtm"></a></p>
-<h4 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题:"></a>解决问题:</h4><p>1.在控制面板下找到凭据管理器, 如下图:<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1599741607840-a0408d9f-7697-4f6e-a9c5-1b5d33408264.png#align=left&display=inline&height=397&margin=%5Bobject%20Object%5D&originHeight=397&originWidth=800&size=0&status=done&style=none&width=800"><br /><br><br />2.点进去, 选择Windows凭据, 然后选择对应的那一条git凭据进行修改或者删除就OK.<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1599741608076-c16239ae-2077-458e-b37a-d87b5a445e35.png#align=left&display=inline&height=483&margin=%5Bobject%20Object%5D&originHeight=483&originWidth=800&size=0&status=done&style=none&width=800"><br />3.再次进行git操作时输入账号密码即可.</p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -462,12 +462,6 @@
       </tags>
   </entry>
   <entry>
-    <title>我的第一篇博客</title>
-    <url>/2020/06/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>##第一章 内容 ——–<br>##第二章 内容 ——–<br>##第三章 内容 ——–<br>##参考文献 内容</p>
-]]></content>
-  </entry>
-  <entry>
     <title>hexo搭建的博客增加搜索功能</title>
     <url>/2020/09/22/hexo%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/</url>
     <content><![CDATA[<p><a name="aNUKB"></a></p>
@@ -489,9 +483,15 @@
       </tags>
   </entry>
   <entry>
+    <title>我的第一篇博客</title>
+    <url>/2020/06/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>##第一章 内容 ——–<br>##第二章 内容 ——–<br>##第三章 内容 ——–<br>##参考文献 内容</p>
+]]></content>
+  </entry>
+  <entry>
     <title>解决git@github.com: Permission denied (publickey).</title>
     <url>/2020/09/21/%E8%A7%A3%E5%86%B3git-github-com-Permission-denied-publickey/</url>
-    <content><![CDATA[<h1 id="解决-103-105-116-x40-x67-105-x74-104-x75-x62-x2e-99-x6f-109-Permission-denied-publickey"><a href="#解决-103-105-116-x40-x67-105-x74-104-x75-x62-x2e-99-x6f-109-Permission-denied-publickey" class="headerlink" title="解决&#103;&#105;&#116;&#x40;&#x67;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#99;&#x6f;&#109;: Permission denied (publickey)."></a>解决<a href="mailto:&#103;&#105;&#116;&#x40;&#x67;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#99;&#x6f;&#109;">&#103;&#105;&#116;&#x40;&#x67;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#99;&#x6f;&#109;</a>: Permission denied (publickey).</h1><p><strong><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600691414505-8704740b-63d0-4842-8287-b80d8c9c6463.png#align=left&display=inline&height=271&margin=%5Bobject%20Object%5D&name=image.png&originHeight=271&originWidth=672&size=127432&status=done&style=none&width=672" alt="image.png"></strong><br /><strong>原因分析</strong><br />Permission denied (publickey) 没有权限的publickey ，<br />出现这错误一般是以下两种原因</p>
+    <content><![CDATA[<h1 id="解决-103-105-116-x40-x67-x69-116-x68-117-x62-46-99-x6f-109-Permission-denied-publickey"><a href="#解决-103-105-116-x40-x67-x69-116-x68-117-x62-46-99-x6f-109-Permission-denied-publickey" class="headerlink" title="解决&#103;&#105;&#116;&#x40;&#x67;&#x69;&#116;&#x68;&#117;&#x62;&#46;&#99;&#x6f;&#109;: Permission denied (publickey)."></a>解决<a href="mailto:&#103;&#105;&#116;&#x40;&#x67;&#x69;&#116;&#x68;&#117;&#x62;&#46;&#99;&#x6f;&#109;">&#103;&#105;&#116;&#x40;&#x67;&#x69;&#116;&#x68;&#117;&#x62;&#46;&#99;&#x6f;&#109;</a>: Permission denied (publickey).</h1><p><strong><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600691414505-8704740b-63d0-4842-8287-b80d8c9c6463.png#align=left&display=inline&height=271&margin=%5Bobject%20Object%5D&name=image.png&originHeight=271&originWidth=672&size=127432&status=done&style=none&width=672" alt="image.png"></strong><br /><strong>原因分析</strong><br />Permission denied (publickey) 没有权限的publickey ，<br />出现这错误一般是以下两种原因</p>
 <ul>
 <li>客户端与服务端未生成 ssh key</li>
 <li>客户端与服务端的ssh key不匹配</li>
