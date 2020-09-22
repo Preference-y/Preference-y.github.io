@@ -6,7 +6,7 @@
   <link href="https://preference-y.github.io/atom.xml" rel="self"/>
   
   <link href="https://preference-y.github.io/"/>
-  <updated>2020-09-22T11:06:47.484Z</updated>
+  <updated>2020-09-22T12:11:51.296Z</updated>
   <id>https://preference-y.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo博客pure主题添加404公益页面</title>
+    <link href="https://preference-y.github.io/2020/09/22/hexo%E5%8D%9A%E5%AE%A2pure%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0404%E5%85%AC%E7%9B%8A%E9%A1%B5%E9%9D%A2/"/>
+    <id>https://preference-y.github.io/2020/09/22/hexo%E5%8D%9A%E5%AE%A2pure%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0404%E5%85%AC%E7%9B%8A%E9%A1%B5%E9%9D%A2/</id>
+    <published>2020-09-22T12:10:59.000Z</published>
+    <updated>2020-09-22T12:11:51.296Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a name=&quot;awi8Q&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;GitHub Pages有提供制作404页面的指引：&lt;/strong&gt;&lt;a href</summary>
+      
+    
+    
+    
+    
+    <category term="笔记" scheme="https://preference-y.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo博客的pure主题添加动态背景</title>
