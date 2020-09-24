@@ -1,33 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Git配置多个SSHkey</title>
-    <url>/2020/09/21/Git%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AASSHkey/</url>
-    <content><![CDATA[<p><a name="article-header0"></a></p>
-<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>当有多个git账号时，比如：<br />a. 一个gitee，用于公司内部的工作开发；<br />b. 一个github，用于自己进行一些开发活动；<br><a name="article-header1"></a></p>
-<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><ol>
-<li>生成一个公司用的SSH-Key</li>
-</ol>
-<p><code>$ ssh-keygen -t rsa -C &#39;xxxxx@company.com&#39; -f ~/.ssh/gitee_id_rsa</code></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">(注意修改为自己的 email ) </span><br><span class="line">ssh-keygen -t rsa -C &#x27;xxxxx@company.com&#x27; -f ~/.ssh/gitee_id_rsa</span><br><span class="line"> </span><br><span class="line"> 代码参数含义：</span><br><span class="line"></span><br><span class="line">-t 指定密钥类型，默认是 rsa ，可以省略。</span><br><span class="line">-C 设置注释文字，比如邮箱。</span><br><span class="line">-f 指定密钥文件存储文件名。</span><br><span class="line"></span><br><span class="line">注：可全部选择默认即为空格跳过</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600592788808-48350c9b-b92a-4d54-94da-ad0a6daf19c9.png#align=left&display=inline&height=422&margin=%5Bobject%20Object%5D&name=image.png&originHeight=422&originWidth=881&size=337950&status=done&style=none&width=881" alt="image.png"></p>
-<ol start="2">
-<li>生成一个github用的SSH-Key</li>
-</ol>
-<p><code>$ ssh-keygen -t rsa -C &#39;xxxxx@qq.com&#39; -f ~/.ssh/github_id_rsa</code></p>
-<ol start="3">
-<li>在 ~/.ssh 目录下新建一个config文件，添加如下内容（其中Host和HostName填写git服务器的域名，IdentityFile指定私钥的路径）<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> gitee</span></span><br><span class="line">Host gitee.com</span><br><span class="line">HostName gitee.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/gitee_id_rsa</span><br><span class="line"><span class="meta">#</span><span class="bash"> github</span></span><br><span class="line">Host github.com</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/github_id_rsa</span><br></pre></td></tr></table></figure></li>
-<li>用ssh命令分别测试<br /><code>$ ssh -T git@gitee.com</code><br /><code>$ ssh -T git@github.com</code><br />这里以gitee为例，成功的话会返回下图内容<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600693883785-f2d24c00-be1c-4281-a896-b0b96018a4d0.png#align=left&display=inline&height=160&margin=%5Bobject%20Object%5D&name=image.png&originHeight=160&originWidth=852&size=140561&status=done&style=none&width=852" alt="image.png"><br /></li>
-</ol>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Fiddler 弱网测试</title>
     <url>/2020/09/23/Fiddler-%E5%BC%B1%E7%BD%91%E6%B5%8B%E8%AF%95/</url>
     <content><![CDATA[<p><a name="zkS6E"></a></p>
@@ -85,6 +58,33 @@
       </tags>
   </entry>
   <entry>
+    <title>Git配置多个SSHkey</title>
+    <url>/2020/09/21/Git%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AASSHkey/</url>
+    <content><![CDATA[<p><a name="article-header0"></a></p>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>当有多个git账号时，比如：<br />a. 一个gitee，用于公司内部的工作开发；<br />b. 一个github，用于自己进行一些开发活动；<br><a name="article-header1"></a></p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><ol>
+<li>生成一个公司用的SSH-Key</li>
+</ol>
+<p><code>$ ssh-keygen -t rsa -C &#39;xxxxx@company.com&#39; -f ~/.ssh/gitee_id_rsa</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">(注意修改为自己的 email ) </span><br><span class="line">ssh-keygen -t rsa -C &#x27;xxxxx@company.com&#x27; -f ~/.ssh/gitee_id_rsa</span><br><span class="line"> </span><br><span class="line"> 代码参数含义：</span><br><span class="line"></span><br><span class="line">-t 指定密钥类型，默认是 rsa ，可以省略。</span><br><span class="line">-C 设置注释文字，比如邮箱。</span><br><span class="line">-f 指定密钥文件存储文件名。</span><br><span class="line"></span><br><span class="line">注：可全部选择默认即为空格跳过</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600592788808-48350c9b-b92a-4d54-94da-ad0a6daf19c9.png#align=left&display=inline&height=422&margin=%5Bobject%20Object%5D&name=image.png&originHeight=422&originWidth=881&size=337950&status=done&style=none&width=881" alt="image.png"></p>
+<ol start="2">
+<li>生成一个github用的SSH-Key</li>
+</ol>
+<p><code>$ ssh-keygen -t rsa -C &#39;xxxxx@qq.com&#39; -f ~/.ssh/github_id_rsa</code></p>
+<ol start="3">
+<li>在 ~/.ssh 目录下新建一个config文件，添加如下内容（其中Host和HostName填写git服务器的域名，IdentityFile指定私钥的路径）<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> gitee</span></span><br><span class="line">Host gitee.com</span><br><span class="line">HostName gitee.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/gitee_id_rsa</span><br><span class="line"><span class="meta">#</span><span class="bash"> github</span></span><br><span class="line">Host github.com</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/github_id_rsa</span><br></pre></td></tr></table></figure></li>
+<li>用ssh命令分别测试<br /><code>$ ssh -T git@gitee.com</code><br /><code>$ ssh -T git@github.com</code><br />这里以gitee为例，成功的话会返回下图内容<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600693883785-f2d24c00-be1c-4281-a896-b0b96018a4d0.png#align=left&display=inline&height=160&margin=%5Bobject%20Object%5D&name=image.png&originHeight=160&originWidth=852&size=140561&status=done&style=none&width=852" alt="image.png"><br /></li>
+</ol>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OSI七层模型&amp;TCP/IP五层、四层模型</title>
     <url>/2020/09/24/OSI%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B-TCP-IP%E4%BA%94%E5%B1%82%E3%80%81%E5%9B%9B%E5%B1%82%E6%A8%A1%E5%9E%8B/</url>
     <content><![CDATA[<p><a name="NiiLK"></a></p>
@@ -95,9 +95,7 @@
 <li><strong>传输层</strong>：定义传输数据的协议端口号，以及流控和差错校验。协议有：TCP UDP，数据包一旦离开网卡即进入网络传输层</li>
 <li><strong>网络层</strong>：进行逻辑地址寻址，实现不同网络之间的路径选择。协议有：ICMP IGMP IP（IPV4 IPV6） ARP RARP</li>
 <li><strong>数据链路层</strong>：建立逻辑连接、进行硬件地址寻址、差错校验等功能。将比特组合成字节进而组合成帧，用MAC地址访问介质，错误发现但不能纠正。</li>
-<li><strong>物理层</strong>：建立、维护、断开物理连接。<br><a name="Vf2wq"></a><h2 id="三种网络模型对应关系图"><a href="#三种网络模型对应关系图" class="headerlink" title="三种网络模型对应关系图"></a>三种网络模型对应关系图</h2><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1594889551355-27be098e-832e-4a75-b225-8e2c52eded74.png#align=left&display=inline&height=384&margin=%5Bobject%20Object%5D&name=image.png&originHeight=384&originWidth=1263&size=153766&status=done&style=none&width=1263" alt="image.png"><br><a name="ymsDK"></a><h2 id="OSI七层模型图解"><a href="#OSI七层模型图解" class="headerlink" title="OSI七层模型图解"></a>OSI七层模型图解</h2><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/1464016/1600931009679-7dca0383-6408-4474-8241-ba190131ac24.jpeg#align=left&display=inline&height=1587&margin=%5Bobject%20Object%5D&originHeight=1587&originWidth=1120&size=0&status=done&style=none&width=1120"><br /><br />
-[http://www.colasoft.com.cn/download/protocols_map.php](http://www.colasoft.com.cn/download/protocols_map.php)
-</li>
+<li><strong>物理层</strong>：建立、维护、断开物理连接。<br><a name="Vf2wq"></a><h2 id="三种网络模型对应关系图"><a href="#三种网络模型对应关系图" class="headerlink" title="三种网络模型对应关系图"></a>三种网络模型对应关系图</h2><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1594889551355-27be098e-832e-4a75-b225-8e2c52eded74.png#align=left&display=inline&height=384&margin=%5Bobject%20Object%5D&name=image.png&originHeight=384&originWidth=1263&size=153766&status=done&style=none&width=1263" alt="image.png"><br><a name="ymsDK"></a><h2 id="OSI七层模型图解"><a href="#OSI七层模型图解" class="headerlink" title="OSI七层模型图解"></a>OSI七层模型图解</h2><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/1464016/1600931009679-7dca0383-6408-4474-8241-ba190131ac24.jpeg#align=left&display=inline&height=1587&margin=%5Bobject%20Object%5D&originHeight=1587&originWidth=1120&size=0&status=done&style=none&width=1120"><br /><br><br /><a href="http://www.colasoft.com.cn/download/protocols_map.php">http://www.colasoft.com.cn/download/protocols_map.php</a></li>
 </ul>
 ]]></content>
       <categories>
@@ -412,6 +410,24 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2020/06/07/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>hexo博客pure主题使用Valine无后端评论系统</title>
     <url>/2020/09/22/hexo%E5%8D%9A%E5%AE%A2pure%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8Valine%E6%97%A0%E5%90%8E%E7%AB%AF%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</url>
     <content><![CDATA[<p><a name="aOvg0"></a></p>
@@ -445,24 +461,6 @@
       <tags>
         <tag>hexo</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/06/07/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>hexo博客的pure主题添加动态背景</title>
@@ -506,24 +504,6 @@
       </tags>
   </entry>
   <entry>
-    <title>解决hexo搭建的博客的翻页箭头显示代码bug</title>
-    <url>/2020/09/23/%E8%A7%A3%E5%86%B3hexo%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%BF%BB%E9%A1%B5%E7%AE%AD%E5%A4%B4%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81bug/</url>
-    <content><![CDATA[<p><a name="ircwS"></a></p>
-<h3 id="问题场景："><a href="#问题场景：" class="headerlink" title="问题场景："></a>问题场景：</h3><p><strong>hexo博客pure主题，分页显示bug，将代码显示出来了；</strong><br />如下所示：<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600796007324-bbb063ec-6f18-4a95-a78d-c696cea50549.png#align=left&display=inline&height=146&margin=%5Bobject%20Object%5D&originHeight=146&originWidth=1204&size=0&status=done&style=none&width=1204"><br /><strong>搭建好博客，上传文章数量多到需要分页时，发现翻页箭头显示了代码。。。 而不是’&gt;’</strong><br><a name="8z70g"></a></p>
-<h3 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h3><p><strong>找到 pagination.ejs中的 paginator 函数，添加 escape: false 试试，代码形如</strong>：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;%- paginator(&#123;</span><br><span class="line">                prev_text: &#39;&lt;i class&#x3D;&quot;icon icon-angle-left&quot;&gt;&lt;&#x2F;i&gt; &#39; + __(&#39;pagination.prev&#39;),</span><br><span class="line">                next_text: __(&#39;pagination.next&#39;) + &#39; &lt;i class&#x3D;&quot;icon icon-angle-right&quot;&gt;&lt;&#x2F;i&gt;&#39;,</span><br><span class="line">                escape: false</span><br><span class="line">            &#125;) %&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600796308874-4dcc4bb8-639b-4e42-917a-6a1332280c56.png#align=left&display=inline&height=279&margin=%5Bobject%20Object%5D&name=image.png&originHeight=279&originWidth=1106&size=42215&status=done&style=none&width=1106" alt="image.png"><br><a name="feVmL"></a></p>
-<h3 id="恢复正常："><a href="#恢复正常：" class="headerlink" title="恢复正常："></a>恢复正常：</h3><p><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600796621318-bad385ff-9dac-4b86-b49f-5306f47aaf83.png#align=left&display=inline&height=179&margin=%5Bobject%20Object%5D&name=image.png&originHeight=179&originWidth=519&size=14438&status=done&style=none&width=519" alt="image.png"></p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>bug</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>我的第一篇博客</title>
     <url>/2020/06/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<p>##第一章 内容 ——–<br>##第二章 内容 ——–<br>##第三章 内容 ——–<br>##参考文献 内容</p>
@@ -532,7 +512,7 @@
   <entry>
     <title>解决git@github.com: Permission denied (publickey).</title>
     <url>/2020/09/21/%E8%A7%A3%E5%86%B3git-github-com-Permission-denied-publickey/</url>
-    <content><![CDATA[<h1 id="解决-103-x69-x74-x40-x67-105-x74-x68-x75-98-46-x63-x6f-x6d-Permission-denied-publickey"><a href="#解决-103-x69-x74-x40-x67-105-x74-x68-x75-98-46-x63-x6f-x6d-Permission-denied-publickey" class="headerlink" title="解决&#103;&#x69;&#x74;&#x40;&#x67;&#105;&#x74;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;: Permission denied (publickey)."></a>解决<a href="mailto:&#103;&#x69;&#x74;&#x40;&#x67;&#105;&#x74;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;">&#103;&#x69;&#x74;&#x40;&#x67;&#105;&#x74;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;</a>: Permission denied (publickey).</h1><p><strong><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600691414505-8704740b-63d0-4842-8287-b80d8c9c6463.png#align=left&display=inline&height=271&margin=%5Bobject%20Object%5D&name=image.png&originHeight=271&originWidth=672&size=127432&status=done&style=none&width=672" alt="image.png"></strong><br /><strong>原因分析</strong><br />Permission denied (publickey) 没有权限的publickey ，<br />出现这错误一般是以下两种原因</p>
+    <content><![CDATA[<h1 id="解决-x67-x69-x74-x40-103-105-116-x68-x75-98-46-99-111-109-Permission-denied-publickey"><a href="#解决-x67-x69-x74-x40-103-105-116-x68-x75-98-46-99-111-109-Permission-denied-publickey" class="headerlink" title="解决&#x67;&#x69;&#x74;&#x40;&#103;&#105;&#116;&#x68;&#x75;&#98;&#46;&#99;&#111;&#109;: Permission denied (publickey)."></a>解决<a href="mailto:&#x67;&#x69;&#x74;&#x40;&#103;&#105;&#116;&#x68;&#x75;&#98;&#46;&#99;&#111;&#109;">&#x67;&#x69;&#x74;&#x40;&#103;&#105;&#116;&#x68;&#x75;&#98;&#46;&#99;&#111;&#109;</a>: Permission denied (publickey).</h1><p><strong><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600691414505-8704740b-63d0-4842-8287-b80d8c9c6463.png#align=left&display=inline&height=271&margin=%5Bobject%20Object%5D&name=image.png&originHeight=271&originWidth=672&size=127432&status=done&style=none&width=672" alt="image.png"></strong><br /><strong>原因分析</strong><br />Permission denied (publickey) 没有权限的publickey ，<br />出现这错误一般是以下两种原因</p>
 <ul>
 <li>客户端与服务端未生成 ssh key</li>
 <li>客户端与服务端的ssh key不匹配</li>
@@ -558,6 +538,24 @@
       </categories>
       <tags>
         <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决hexo搭建的博客的翻页箭头显示代码bug</title>
+    <url>/2020/09/23/%E8%A7%A3%E5%86%B3hexo%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%BF%BB%E9%A1%B5%E7%AE%AD%E5%A4%B4%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81bug/</url>
+    <content><![CDATA[<p><a name="ircwS"></a></p>
+<h3 id="问题场景："><a href="#问题场景：" class="headerlink" title="问题场景："></a>问题场景：</h3><p><strong>hexo博客pure主题，分页显示bug，将代码显示出来了；</strong><br />如下所示：<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600796007324-bbb063ec-6f18-4a95-a78d-c696cea50549.png#align=left&display=inline&height=146&margin=%5Bobject%20Object%5D&originHeight=146&originWidth=1204&size=0&status=done&style=none&width=1204"><br /><strong>搭建好博客，上传文章数量多到需要分页时，发现翻页箭头显示了代码。。。 而不是’&gt;’</strong><br><a name="8z70g"></a></p>
+<h3 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h3><p><strong>找到 pagination.ejs中的 paginator 函数，添加 escape: false 试试，代码形如</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;%- paginator(&#123;</span><br><span class="line">                prev_text: &#39;&lt;i class&#x3D;&quot;icon icon-angle-left&quot;&gt;&lt;&#x2F;i&gt; &#39; + __(&#39;pagination.prev&#39;),</span><br><span class="line">                next_text: __(&#39;pagination.next&#39;) + &#39; &lt;i class&#x3D;&quot;icon icon-angle-right&quot;&gt;&lt;&#x2F;i&gt;&#39;,</span><br><span class="line">                escape: false</span><br><span class="line">            &#125;) %&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600796308874-4dcc4bb8-639b-4e42-917a-6a1332280c56.png#align=left&display=inline&height=279&margin=%5Bobject%20Object%5D&name=image.png&originHeight=279&originWidth=1106&size=42215&status=done&style=none&width=1106" alt="image.png"><br><a name="feVmL"></a></p>
+<h3 id="恢复正常："><a href="#恢复正常：" class="headerlink" title="恢复正常："></a>恢复正常：</h3><p><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600796621318-bad385ff-9dac-4b86-b49f-5306f47aaf83.png#align=left&display=inline&height=179&margin=%5Bobject%20Object%5D&name=image.png&originHeight=179&originWidth=519&size=14438&status=done&style=none&width=519" alt="image.png"></p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>bug</tag>
       </tags>
   </entry>
   <entry>
