@@ -6,7 +6,7 @@
   <link href="https://preference-y.github.io/atom.xml" rel="self"/>
   
   <link href="https://preference-y.github.io/"/>
-  <updated>2020-09-22T17:47:29.731Z</updated>
+  <updated>2020-09-24T07:16:03.940Z</updated>
   <id>https://preference-y.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>OSI七层模型&amp;TCP/IP五层、四层模型</title>
+    <link href="https://preference-y.github.io/2020/09/24/OSI%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B-TCP-IP%E4%BA%94%E5%B1%82%E3%80%81%E5%9B%9B%E5%B1%82%E6%A8%A1%E5%9E%8B/"/>
+    <id>https://preference-y.github.io/2020/09/24/OSI%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B-TCP-IP%E4%BA%94%E5%B1%82%E3%80%81%E5%9B%9B%E5%B1%82%E6%A8%A1%E5%9E%8B/</id>
+    <published>2020-09-24T07:14:08.000Z</published>
+    <updated>2020-09-24T07:16:03.940Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a name=&quot;NiiLK&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;七层模型从上到下依次是：&quot;&gt;&lt;a href=&quot;#七层模型从上到下依次是：&quot; class=&quot;headerlink&quot; title=&quot;七层模型从上到下依次是：&quot;&gt;&lt;/a&gt;七层模型从上到下依次是：&lt;/h2&gt;&lt;ul&gt;
+</summary>
+      
+    
+    
+    
+    <category term="笔记" scheme="https://preference-y.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="OSI" scheme="https://preference-y.github.io/tags/OSI/"/>
+    
+  </entry>
   
   <entry>
     <title>解决hexo搭建的博客的翻页箭头显示代码bug</title>
@@ -263,7 +287,7 @@
     
       
       
-    <summary type="html">&lt;h1 id=&quot;解决-x67-x69-116-x40-x67-105-116-x68-x75-x62-x2e-99-111-x6d-Permission-denied-publickey&quot;&gt;&lt;a href=&quot;#解决-x67-x69-116-x40-x67-105-116-x68-</summary>
+    <summary type="html">&lt;h1 id=&quot;解决-103-x69-x74-x40-x67-105-x74-x68-x75-98-46-x63-x6f-x6d-Permission-denied-publickey&quot;&gt;&lt;a href=&quot;#解决-103-x69-x74-x40-x67-105-x74-x68-x</summary>
       
     
     
