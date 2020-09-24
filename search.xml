@@ -428,6 +428,26 @@
 ]]></content>
   </entry>
   <entry>
+    <title>hexo博客pure主题使用Valine无后端评论系统</title>
+    <url>/2020/09/22/hexo%E5%8D%9A%E5%AE%A2pure%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8Valine%E6%97%A0%E5%90%8E%E7%AB%AF%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p><a name="aOvg0"></a></p>
+<h2 id="Valine"><a href="#Valine" class="headerlink" title="Valine"></a>Valine</h2><p>一个无后端的评论框工具, 其依赖于 <a href="https://leancloud.cn/">Leancloud</a> 开发, 所以使用前需要先注册 <a href="https://leancloud.cn/">Leancloud</a> 账号<br />如何开始? 你可以从 <a href="https://valine.js.org/quickstart.html">Valine-快速开始</a> 教程开始, 教程包含了一步一步的指引教程.<br /></p>
+<p><a name="AvWPY"></a></p>
+<h2 id="获取APP-ID-和-APP-Key"><a href="#获取APP-ID-和-APP-Key" class="headerlink" title="获取APP ID 和 APP Key"></a>获取APP ID 和 APP Key</h2><p>请先<a href="https://leancloud.cn/dashboard/login.html#/signin">登录</a>或<a href="https://leancloud.cn/dashboard/login.html#/signup">注册</a> <code>LeanCloud</code>, 进入<a href="https://leancloud.cn/dashboard/applist.html#/apps">控制台</a>后点击左下角<a href="https://leancloud.cn/dashboard/applist.html#/newapp">创建应用</a>：<br /><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/1464016/1600780153262-ad789d3f-a36d-46f7-b9c1-632fbab64b39.jpeg#align=left&display=inline&height=456&margin=%5Bobject%20Object%5D&originHeight=456&originWidth=616&size=0&status=done&style=none&width=616"><br />应用创建好以后，进入刚刚创建的应用，选择左下角的<code>设置</code>&gt;<code>应用Key</code>，然后就能看到你的<code>APP ID</code>和<code>APP Key</code>了：<br /><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/1464016/1600780153286-f8b64ffc-91b0-454f-9546-c09b20aae43f.jpeg#align=left&display=inline&height=533&margin=%5Bobject%20Object%5D&originHeight=533&originWidth=1202&size=0&status=done&style=none&width=1202"><br><a name="jxNzJ"></a></p>
+<h5 id=""><a href="#" class="headerlink" title=""></a></h5><p><a name="x76kb"></a></p>
+<h5 id="Valine配置项"><a href="#Valine配置项" class="headerlink" title="Valine配置项"></a>Valine配置项</h5><p>主题valine评论框提供了以下配置项</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">valine:</span> <span class="comment"># Valine官方地址: https://valine.js.org</span></span><br><span class="line">  <span class="attr">appid:</span>  <span class="comment"># 你的 leancloud 应用 appid</span></span><br><span class="line">  <span class="attr">appkey:</span>  <span class="comment"># 你的 leancloud 应用 appkey</span></span><br><span class="line">  <span class="attr">notify:</span> <span class="literal">true</span> <span class="comment"># 是否开始评论邮件提醒, 教程: https://github.com/xCss/Valine/wiki</span></span><br><span class="line">  <span class="attr">verify:</span> <span class="literal">false</span> <span class="comment"># 是否开始验证码功能, 开始邮件提醒会自动开启验证码功能</span></span><br><span class="line">  <span class="attr">placeholder:</span> <span class="string">说点什么...</span> <span class="comment"># 输入框默认内容</span></span><br><span class="line">  <span class="attr">avatar:</span> <span class="string">mm</span> <span class="comment"># 头像展示方式, 具体设置项教程: https://valine.js.org/configuration.html#avatar</span></span><br><span class="line">  <span class="attr">meta:</span> <span class="string">nick,mail,link</span> <span class="comment"># 自定义评论信息</span></span><br><span class="line">  <span class="attr">pageSize:</span> <span class="number">10</span> <span class="comment"># 评论列表分页</span></span><br><span class="line">  <span class="attr">lang:</span> <span class="string">zh-cn,</span> <span class="comment"># 多语言支持 zh-cn | en</span></span><br><span class="line">  <span class="attr">visitor:</span> <span class="literal">true</span> <span class="comment"># 文章阅读量统计:  https://valine.js.org/visitor.html</span></span><br><span class="line">  <span class="attr">highlight:</span> <span class="literal">true</span> <span class="comment"># 代码高亮</span></span><br><span class="line">  <span class="attr">recordIP:</span> <span class="literal">true</span> <span class="comment"># 记录评论者的IP</span></span><br></pre></td></tr></table></figure>
+<p><a name="uTjsL"></a></p>
+<h2 id="评论数据管理"><a href="#评论数据管理" class="headerlink" title="评论数据管理"></a>评论数据管理</h2><p>由于Valine 是无后端评论系统，所以也就没有开发评论数据管理功能。请自行登录<code>Leancloud应用</code>管理。<br />具体步骤：<code>登录</code>&gt;<code>选择你创建的应用</code>&gt;<code>存储</code>&gt;选择Class <code>Comment</code>，然后就可以尽情的发挥你的权利啦(～￣▽￣)～<br /></p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo博客pure主题添加404公益页面</title>
     <url>/2020/09/22/hexo%E5%8D%9A%E5%AE%A2pure%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0404%E5%85%AC%E7%9B%8A%E9%A1%B5%E9%9D%A2/</url>
     <content><![CDATA[<p><a name="awi8Q"></a></p>
@@ -443,17 +463,17 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo博客pure主题使用Valine无后端评论系统</title>
-    <url>/2020/09/22/hexo%E5%8D%9A%E5%AE%A2pure%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8Valine%E6%97%A0%E5%90%8E%E7%AB%AF%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<p><a name="aOvg0"></a></p>
-<h2 id="Valine"><a href="#Valine" class="headerlink" title="Valine"></a>Valine</h2><p>一个无后端的评论框工具, 其依赖于 <a href="https://leancloud.cn/">Leancloud</a> 开发, 所以使用前需要先注册 <a href="https://leancloud.cn/">Leancloud</a> 账号<br />如何开始? 你可以从 <a href="https://valine.js.org/quickstart.html">Valine-快速开始</a> 教程开始, 教程包含了一步一步的指引教程.<br /></p>
-<p><a name="AvWPY"></a></p>
-<h2 id="获取APP-ID-和-APP-Key"><a href="#获取APP-ID-和-APP-Key" class="headerlink" title="获取APP ID 和 APP Key"></a>获取APP ID 和 APP Key</h2><p>请先<a href="https://leancloud.cn/dashboard/login.html#/signin">登录</a>或<a href="https://leancloud.cn/dashboard/login.html#/signup">注册</a> <code>LeanCloud</code>, 进入<a href="https://leancloud.cn/dashboard/applist.html#/apps">控制台</a>后点击左下角<a href="https://leancloud.cn/dashboard/applist.html#/newapp">创建应用</a>：<br /><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/1464016/1600780153262-ad789d3f-a36d-46f7-b9c1-632fbab64b39.jpeg#align=left&display=inline&height=456&margin=%5Bobject%20Object%5D&originHeight=456&originWidth=616&size=0&status=done&style=none&width=616"><br />应用创建好以后，进入刚刚创建的应用，选择左下角的<code>设置</code>&gt;<code>应用Key</code>，然后就能看到你的<code>APP ID</code>和<code>APP Key</code>了：<br /><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/1464016/1600780153286-f8b64ffc-91b0-454f-9546-c09b20aae43f.jpeg#align=left&display=inline&height=533&margin=%5Bobject%20Object%5D&originHeight=533&originWidth=1202&size=0&status=done&style=none&width=1202"><br><a name="jxNzJ"></a></p>
-<h5 id=""><a href="#" class="headerlink" title=""></a></h5><p><a name="x76kb"></a></p>
-<h5 id="Valine配置项"><a href="#Valine配置项" class="headerlink" title="Valine配置项"></a>Valine配置项</h5><p>主题valine评论框提供了以下配置项</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">valine:</span> <span class="comment"># Valine官方地址: https://valine.js.org</span></span><br><span class="line">  <span class="attr">appid:</span>  <span class="comment"># 你的 leancloud 应用 appid</span></span><br><span class="line">  <span class="attr">appkey:</span>  <span class="comment"># 你的 leancloud 应用 appkey</span></span><br><span class="line">  <span class="attr">notify:</span> <span class="literal">true</span> <span class="comment"># 是否开始评论邮件提醒, 教程: https://github.com/xCss/Valine/wiki</span></span><br><span class="line">  <span class="attr">verify:</span> <span class="literal">false</span> <span class="comment"># 是否开始验证码功能, 开始邮件提醒会自动开启验证码功能</span></span><br><span class="line">  <span class="attr">placeholder:</span> <span class="string">说点什么...</span> <span class="comment"># 输入框默认内容</span></span><br><span class="line">  <span class="attr">avatar:</span> <span class="string">mm</span> <span class="comment"># 头像展示方式, 具体设置项教程: https://valine.js.org/configuration.html#avatar</span></span><br><span class="line">  <span class="attr">meta:</span> <span class="string">nick,mail,link</span> <span class="comment"># 自定义评论信息</span></span><br><span class="line">  <span class="attr">pageSize:</span> <span class="number">10</span> <span class="comment"># 评论列表分页</span></span><br><span class="line">  <span class="attr">lang:</span> <span class="string">zh-cn,</span> <span class="comment"># 多语言支持 zh-cn | en</span></span><br><span class="line">  <span class="attr">visitor:</span> <span class="literal">true</span> <span class="comment"># 文章阅读量统计:  https://valine.js.org/visitor.html</span></span><br><span class="line">  <span class="attr">highlight:</span> <span class="literal">true</span> <span class="comment"># 代码高亮</span></span><br><span class="line">  <span class="attr">recordIP:</span> <span class="literal">true</span> <span class="comment"># 记录评论者的IP</span></span><br></pre></td></tr></table></figure>
-<p><a name="uTjsL"></a></p>
-<h2 id="评论数据管理"><a href="#评论数据管理" class="headerlink" title="评论数据管理"></a>评论数据管理</h2><p>由于Valine 是无后端评论系统，所以也就没有开发评论数据管理功能。请自行登录<code>Leancloud应用</code>管理。<br />具体步骤：<code>登录</code>&gt;<code>选择你创建的应用</code>&gt;<code>存储</code>&gt;选择Class <code>Comment</code>，然后就可以尽情的发挥你的权利啦(～￣▽￣)～<br /></p>
+    <title>hexo博客的pure主题添加动态背景</title>
+    <url>/2020/09/22/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84pure%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E5%8A%A8%E6%80%81%E8%83%8C%E6%99%AF/</url>
+    <content><![CDATA[<p><a name="w4BJt"></a></p>
+<h4 id="修改-layout-ejs"><a href="#修改-layout-ejs" class="headerlink" title="修改 _layout.ejs"></a>修改 _layout.ejs</h4><p>打开 <code>themes/主题名称/layout/layout.ejs</code><br />在 &lt; /body&gt;之前添加代码（不要放在&lt; /head&gt;后）。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;% if (theme.canvas_nest) &#123; %&gt;</span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;</span><br><span class="line">color&#x3D;&quot;0,0,0&quot; opacity&#x3D;&#39;0.4&#39; zIndex&#x3D;&quot;-2&quot; count&#x3D;&quot;88&quot; src&#x3D;&quot;&#x2F;&#x2F;cdn.bootcss.com&#x2F;canvas-nest.js&#x2F;1.0.0&#x2F;canvas-nest.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+<p>可参照自己所用主题的 layout.ejs 中有 if 的那部分代码。<br><a name="NE6dl"></a></p>
+<h4 id="配置项说明"><a href="#配置项说明" class="headerlink" title="配置项说明"></a>配置项说明</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">color：线条颜色, 默认：&#39;0,0,0&#39;；三个数字分别为（R,G,B）</span><br><span class="line">opacity：线条透明度（0~1）, 默认：0.5</span><br><span class="line">count：线条的总数量，默认：150</span><br><span class="line">zIndex：背景的z-index属性，css属性用于控制所在层的位置，默认：-1</span><br></pre></td></tr></table></figure>
+<p><a name="Vt77Y"></a></p>
+<h4 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h4><p>打开<code>themes/主题名称/_config.yml</code>，随意找一行，添加代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># --------------------------------------------------------------</span><br><span class="line"># background settings</span><br><span class="line"># --------------------------------------------------------------</span><br><span class="line"># add canvas-nest effect</span><br><span class="line"># see detail from https:&#x2F;&#x2F;github.com&#x2F;hustcc&#x2F;canvas-nest.js</span><br><span class="line">canvas_nest: true</span><br></pre></td></tr></table></figure>
+<p>然后运行<code>hexo s</code>，在浏览器的地址栏输入<code>localhost:4000</code>就能看到效果了。<br /><br><br />参考：**<a href="https://shenzekun.github.io/hexo%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E5%8A%A8%E6%80%81%E8%83%8C%E6%99%AF.html">距离</a>**</p>
 ]]></content>
       <categories>
         <category>笔记</category>
@@ -484,26 +504,6 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo博客的pure主题添加动态背景</title>
-    <url>/2020/09/22/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84pure%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E5%8A%A8%E6%80%81%E8%83%8C%E6%99%AF/</url>
-    <content><![CDATA[<p><a name="w4BJt"></a></p>
-<h4 id="修改-layout-ejs"><a href="#修改-layout-ejs" class="headerlink" title="修改 _layout.ejs"></a>修改 _layout.ejs</h4><p>打开 <code>themes/主题名称/layout/layout.ejs</code><br />在 &lt; /body&gt;之前添加代码（不要放在&lt; /head&gt;后）。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;% if (theme.canvas_nest) &#123; %&gt;</span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;</span><br><span class="line">color&#x3D;&quot;0,0,0&quot; opacity&#x3D;&#39;0.4&#39; zIndex&#x3D;&quot;-2&quot; count&#x3D;&quot;88&quot; src&#x3D;&quot;&#x2F;&#x2F;cdn.bootcss.com&#x2F;canvas-nest.js&#x2F;1.0.0&#x2F;canvas-nest.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
-<p>可参照自己所用主题的 layout.ejs 中有 if 的那部分代码。<br><a name="NE6dl"></a></p>
-<h4 id="配置项说明"><a href="#配置项说明" class="headerlink" title="配置项说明"></a>配置项说明</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">color：线条颜色, 默认：&#39;0,0,0&#39;；三个数字分别为（R,G,B）</span><br><span class="line">opacity：线条透明度（0~1）, 默认：0.5</span><br><span class="line">count：线条的总数量，默认：150</span><br><span class="line">zIndex：背景的z-index属性，css属性用于控制所在层的位置，默认：-1</span><br></pre></td></tr></table></figure>
-<p><a name="Vt77Y"></a></p>
-<h4 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h4><p>打开<code>themes/主题名称/_config.yml</code>，随意找一行，添加代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># --------------------------------------------------------------</span><br><span class="line"># background settings</span><br><span class="line"># --------------------------------------------------------------</span><br><span class="line"># add canvas-nest effect</span><br><span class="line"># see detail from https:&#x2F;&#x2F;github.com&#x2F;hustcc&#x2F;canvas-nest.js</span><br><span class="line">canvas_nest: true</span><br></pre></td></tr></table></figure>
-<p>然后运行<code>hexo s</code>，在浏览器的地址栏输入<code>localhost:4000</code>就能看到效果了。<br /><br><br />参考：**<a href="https://shenzekun.github.io/hexo%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E5%8A%A8%E6%80%81%E8%83%8C%E6%99%AF.html">距离</a>**</p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>我的第一篇博客</title>
     <url>/2020/06/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<p>##第一章 内容 ——–<br>##第二章 内容 ——–<br>##第三章 内容 ——–<br>##参考文献 内容</p>
@@ -512,7 +512,7 @@
   <entry>
     <title>解决git@github.com: Permission denied (publickey).</title>
     <url>/2020/09/21/%E8%A7%A3%E5%86%B3git-github-com-Permission-denied-publickey/</url>
-    <content><![CDATA[<h1 id="解决-x67-x69-x74-64-x67-x69-116-x68-x75-98-x2e-x63-111-109-Permission-denied-publickey"><a href="#解决-x67-x69-x74-64-x67-x69-116-x68-x75-98-x2e-x63-111-109-Permission-denied-publickey" class="headerlink" title="解决&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#116;&#x68;&#x75;&#98;&#x2e;&#x63;&#111;&#109;: Permission denied (publickey)."></a>解决<a href="mailto:&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#116;&#x68;&#x75;&#98;&#x2e;&#x63;&#111;&#109;">&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#116;&#x68;&#x75;&#98;&#x2e;&#x63;&#111;&#109;</a>: Permission denied (publickey).</h1><p><strong><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600691414505-8704740b-63d0-4842-8287-b80d8c9c6463.png#align=left&display=inline&height=271&margin=%5Bobject%20Object%5D&name=image.png&originHeight=271&originWidth=672&size=127432&status=done&style=none&width=672" alt="image.png"></strong><br /><strong>原因分析</strong><br />Permission denied (publickey) 没有权限的publickey ，<br />出现这错误一般是以下两种原因</p>
+    <content><![CDATA[<h1 id="解决-103-105-x74-64-x67-x69-x74-104-x75-x62-x2e-99-111-x6d-Permission-denied-publickey"><a href="#解决-103-105-x74-64-x67-x69-x74-104-x75-x62-x2e-99-111-x6d-Permission-denied-publickey" class="headerlink" title="解决&#103;&#105;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#x6d;: Permission denied (publickey)."></a>解决<a href="mailto:&#103;&#105;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#x6d;">&#103;&#105;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#x6d;</a>: Permission denied (publickey).</h1><p><strong><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600691414505-8704740b-63d0-4842-8287-b80d8c9c6463.png#align=left&display=inline&height=271&margin=%5Bobject%20Object%5D&name=image.png&originHeight=271&originWidth=672&size=127432&status=done&style=none&width=672" alt="image.png"></strong><br /><strong>原因分析</strong><br />Permission denied (publickey) 没有权限的publickey ，<br />出现这错误一般是以下两种原因</p>
 <ul>
 <li>客户端与服务端未生成 ssh key</li>
 <li>客户端与服务端的ssh key不匹配</li>
