@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://preference-y.github.io/2020/09/24/Cron%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</loc>
+    
+    <lastmod>2020-09-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://preference-y.github.io/about/index.html</loc>
     
     <lastmod>2020-09-24</lastmod>
@@ -128,14 +135,14 @@
   </url>
   
   <url>
-    <loc>https://preference-y.github.io/books/index.html</loc>
+    <loc>https://preference-y.github.io/links/index.html</loc>
     
     <lastmod>2020-06-07</lastmod>
     
   </url>
   
   <url>
-    <loc>https://preference-y.github.io/links/index.html</loc>
+    <loc>https://preference-y.github.io/books/index.html</loc>
     
     <lastmod>2020-06-07</lastmod>
     
@@ -156,6 +163,13 @@
     <priority>1.0</priority>
   </url>
 
+  
+  <url>
+    <loc>https://preference-y.github.io/tags/Corn/</loc>
+    <lastmod>2020-09-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
   
   <url>
     <loc>https://preference-y.github.io/tags/Fiddler/</loc>
@@ -186,14 +200,14 @@
   </url>
   
   <url>
-    <loc>https://preference-y.github.io/tags/sql/</loc>
+    <loc>https://preference-y.github.io/tags/hexo/</loc>
     <lastmod>2020-09-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://preference-y.github.io/tags/hexo/</loc>
+    <loc>https://preference-y.github.io/tags/sql/</loc>
     <lastmod>2020-09-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
