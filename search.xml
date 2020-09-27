@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Fiddler 弱网测试</title>
+    <url>/2020/09/23/Fiddler-%E5%BC%B1%E7%BD%91%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<p><a name="zkS6E"></a></p>
+<h1 id="1、模拟弱网环境"><a href="#1、模拟弱网环境" class="headerlink" title="1、模拟弱网环境"></a>1、模拟弱网环境</h1><p>打开Fiddler，Rules-&gt;Performance-&gt;勾选 Simulate Modem Speeds，勾选之后访问网站会发现网络慢了很多<br><a name="ZSijC"></a></p>
+<h1 id="2、Fiddler弱网的原理"><a href="#2、Fiddler弱网的原理" class="headerlink" title="2、Fiddler弱网的原理"></a>2、Fiddler弱网的原理</h1><p>Rules—&gt;Cutomize Rules打开CustomRules.js 文档<br />在文件中搜索关键字，m_SimulateModem<br />1.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; Cause Fiddler to delay HTTP traffic to simulate typical 56k modem conditions</span><br><span class="line">    public static RulesOption(&quot;Simulate &amp;Modem Speeds&quot;, &quot;Per&amp;formance&quot;)</span><br><span class="line">    var m_SimulateModem: boolean &#x3D; false;</span><br></pre></td></tr></table></figure>
+<p>2.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if (m_SimulateModem) &#123;</span><br><span class="line">            &#x2F;&#x2F; Delay sends by 300ms per KB uploaded.</span><br><span class="line">            oSession[&quot;request-trickle-delay&quot;] &#x3D; &quot;300&quot;;</span><br><span class="line">            &#x2F;&#x2F; Delay receives by 150ms per KB downloaded.</span><br><span class="line">            oSession[&quot;response-trickle-delay&quot;] &#x3D; &quot;150&quot;;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<p>让我们来分析一下这几行代码：</p>
+<ul>
+<li>首先来判断m_SimulateModem是否为true，也就是是否设置了弱网模式。<br /></li>
+<li>如果为弱网模式。则分析代码<br /></li>
+<li>oSession[“request-trickle-delay”] = “300”; 注释的也很明白，Delay sends by 300ms per KB uploaded.上传1KB需要300ms，<br />转化一下上传速度：1Kb/0.3s = 10/3(KB/s)，也就是 3.33kb/s ，到达2G网络标准。<br /></li>
+<li>如果你想设置上传的速度为50KB/s，你则需要设置Delay 时间为 20ms<br /></li>
+<li>同样的方法，也可以限制上传的速度，调整oSession[“response-trickle-delay”]即可。<br /></li>
+</ul>
+<hr>
+<table>
+<thead>
+<tr>
+<th>网络</th>
+<th>上行</th>
+<th>下载</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2G</td>
+<td>2.7K</td>
+<td>9.6K</td>
+</tr>
+<tr>
+<td>3G</td>
+<td>1.8M</td>
+<td>7.2M</td>
+</tr>
+<tr>
+<td>4G</td>
+<td>50M</td>
+<td>100M</td>
+</tr>
+</tbody></table>
+<hr>
+<p><strong>所以得出：2G网络配置</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if (m_SimulateModem) &#123;</span><br><span class="line">            &#x2F;&#x2F; Delay sends by 300ms per KB uploaded.</span><br><span class="line">            oSession[&quot;request-trickle-delay&quot;] &#x3D; &quot;300&quot;;</span><br><span class="line">            &#x2F;&#x2F; Delay receives by 150ms per KB downloaded.</span><br><span class="line">            oSession[&quot;response-trickle-delay&quot;] &#x3D; &quot;150&quot;;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>3G 网络配置,3G 应该是2G网络估值的1000倍速率，也就是上行和下载除去1000。</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if (m_SimulateModem) &#123;</span><br><span class="line">            &#x2F;&#x2F; Delay sends by 300ms per KB uploaded.</span><br><span class="line">            oSession[&quot;request-trickle-delay&quot;] &#x3D; &quot;0.3&quot;;</span><br><span class="line">            &#x2F;&#x2F; Delay receives by 150ms per KB downloaded.</span><br><span class="line">            oSession[&quot;response-trickle-delay&quot;] &#x3D; &quot;0.15&quot;;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>4G网络配置，上行为3G的25倍，下载为15倍，放开延迟即可。</strong></p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>Fiddler</tag>
+        <tag>抓包</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Cron表达式定时任务</title>
     <url>/2020/09/24/Cron%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</url>
     <content><![CDATA[<p><a name="NKJdH"></a></p>
@@ -172,63 +229,6 @@
       </categories>
       <tags>
         <tag>Corn</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Fiddler 弱网测试</title>
-    <url>/2020/09/23/Fiddler-%E5%BC%B1%E7%BD%91%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<p><a name="zkS6E"></a></p>
-<h1 id="1、模拟弱网环境"><a href="#1、模拟弱网环境" class="headerlink" title="1、模拟弱网环境"></a>1、模拟弱网环境</h1><p>打开Fiddler，Rules-&gt;Performance-&gt;勾选 Simulate Modem Speeds，勾选之后访问网站会发现网络慢了很多<br><a name="ZSijC"></a></p>
-<h1 id="2、Fiddler弱网的原理"><a href="#2、Fiddler弱网的原理" class="headerlink" title="2、Fiddler弱网的原理"></a>2、Fiddler弱网的原理</h1><p>Rules—&gt;Cutomize Rules打开CustomRules.js 文档<br />在文件中搜索关键字，m_SimulateModem<br />1.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; Cause Fiddler to delay HTTP traffic to simulate typical 56k modem conditions</span><br><span class="line">    public static RulesOption(&quot;Simulate &amp;Modem Speeds&quot;, &quot;Per&amp;formance&quot;)</span><br><span class="line">    var m_SimulateModem: boolean &#x3D; false;</span><br></pre></td></tr></table></figure>
-<p>2.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if (m_SimulateModem) &#123;</span><br><span class="line">            &#x2F;&#x2F; Delay sends by 300ms per KB uploaded.</span><br><span class="line">            oSession[&quot;request-trickle-delay&quot;] &#x3D; &quot;300&quot;;</span><br><span class="line">            &#x2F;&#x2F; Delay receives by 150ms per KB downloaded.</span><br><span class="line">            oSession[&quot;response-trickle-delay&quot;] &#x3D; &quot;150&quot;;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-<p>让我们来分析一下这几行代码：</p>
-<ul>
-<li>首先来判断m_SimulateModem是否为true，也就是是否设置了弱网模式。<br /></li>
-<li>如果为弱网模式。则分析代码<br /></li>
-<li>oSession[“request-trickle-delay”] = “300”; 注释的也很明白，Delay sends by 300ms per KB uploaded.上传1KB需要300ms，<br />转化一下上传速度：1Kb/0.3s = 10/3(KB/s)，也就是 3.33kb/s ，到达2G网络标准。<br /></li>
-<li>如果你想设置上传的速度为50KB/s，你则需要设置Delay 时间为 20ms<br /></li>
-<li>同样的方法，也可以限制上传的速度，调整oSession[“response-trickle-delay”]即可。<br /></li>
-</ul>
-<hr>
-<table>
-<thead>
-<tr>
-<th>网络</th>
-<th>上行</th>
-<th>下载</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>2G</td>
-<td>2.7K</td>
-<td>9.6K</td>
-</tr>
-<tr>
-<td>3G</td>
-<td>1.8M</td>
-<td>7.2M</td>
-</tr>
-<tr>
-<td>4G</td>
-<td>50M</td>
-<td>100M</td>
-</tr>
-</tbody></table>
-<hr>
-<p><strong>所以得出：2G网络配置</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if (m_SimulateModem) &#123;</span><br><span class="line">            &#x2F;&#x2F; Delay sends by 300ms per KB uploaded.</span><br><span class="line">            oSession[&quot;request-trickle-delay&quot;] &#x3D; &quot;300&quot;;</span><br><span class="line">            &#x2F;&#x2F; Delay receives by 150ms per KB downloaded.</span><br><span class="line">            oSession[&quot;response-trickle-delay&quot;] &#x3D; &quot;150&quot;;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>3G 网络配置,3G 应该是2G网络估值的1000倍速率，也就是上行和下载除去1000。</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if (m_SimulateModem) &#123;</span><br><span class="line">            &#x2F;&#x2F; Delay sends by 300ms per KB uploaded.</span><br><span class="line">            oSession[&quot;request-trickle-delay&quot;] &#x3D; &quot;0.3&quot;;</span><br><span class="line">            &#x2F;&#x2F; Delay receives by 150ms per KB downloaded.</span><br><span class="line">            oSession[&quot;response-trickle-delay&quot;] &#x3D; &quot;0.15&quot;;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>4G网络配置，上行为3G的25倍，下载为15倍，放开延迟即可。</strong></p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>Fiddler</tag>
-        <tag>抓包</tag>
       </tags>
   </entry>
   <entry>
@@ -657,6 +657,14 @@
       </tags>
   </entry>
   <entry>
+    <title>我的第一篇博客</title>
+    <url>/2020/06/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h1 id="第一篇文章测试"><a href="#第一篇文章测试" class="headerlink" title="第一篇文章测试"></a>第一篇文章测试</h1><h2 id="第一章-内容-——–"><a href="#第一章-内容-——–" class="headerlink" title="第一章 内容 ——–"></a>第一章 内容 ——–</h2><h2 id="第二章-内容-——–"><a href="#第二章-内容-——–" class="headerlink" title="第二章 内容 ——–"></a>第二章 内容 ——–</h2><h2 id="第三章-内容-——–"><a href="#第三章-内容-——–" class="headerlink" title="第三章 内容 ——–"></a>第三章 内容 ——–</h2><h2 id="参考文献-内容-——–"><a href="#参考文献-内容-——–" class="headerlink" title="参考文献 内容 ——–"></a>参考文献 内容 ——–</h2>]]></content>
+      <categories>
+        <category>第一篇文章测试</category>
+      </categories>
+  </entry>
+  <entry>
     <title>hexo搭建的博客增加搜索功能</title>
     <url>/2020/09/22/hexo%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/</url>
     <content><![CDATA[<p><a name="aNUKB"></a></p>
@@ -676,12 +684,6 @@
       <tags>
         <tag>hexo</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>我的第一篇博客</title>
-    <url>/2020/06/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>##第一章 内容 ——–<br>##第二章 内容 ——–<br>##第三章 内容 ——–<br>##参考文献 内容</p>
-]]></content>
   </entry>
   <entry>
     <title>解决hexo搭建的博客的翻页箭头显示代码bug</title>
@@ -704,7 +706,7 @@
   <entry>
     <title>解决git@github.com: Permission denied (publickey).</title>
     <url>/2020/09/21/%E8%A7%A3%E5%86%B3git-github-com-Permission-denied-publickey/</url>
-    <content><![CDATA[<h1 id="解决-x67-105-x74-x40-103-105-116-x68-x75-x62-46-x63-111-x6d-Permission-denied-publickey"><a href="#解决-x67-105-x74-x40-103-105-116-x68-x75-x62-46-x63-111-x6d-Permission-denied-publickey" class="headerlink" title="解决&#x67;&#105;&#x74;&#x40;&#103;&#105;&#116;&#x68;&#x75;&#x62;&#46;&#x63;&#111;&#x6d;: Permission denied (publickey)."></a>解决<a href="mailto:&#x67;&#105;&#x74;&#x40;&#103;&#105;&#116;&#x68;&#x75;&#x62;&#46;&#x63;&#111;&#x6d;">&#x67;&#105;&#x74;&#x40;&#103;&#105;&#116;&#x68;&#x75;&#x62;&#46;&#x63;&#111;&#x6d;</a>: Permission denied (publickey).</h1><p><strong><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600691414505-8704740b-63d0-4842-8287-b80d8c9c6463.png#align=left&display=inline&height=271&margin=%5Bobject%20Object%5D&name=image.png&originHeight=271&originWidth=672&size=127432&status=done&style=none&width=672" alt="image.png"></strong><br /><strong>原因分析</strong><br />Permission denied (publickey) 没有权限的publickey ，<br />出现这错误一般是以下两种原因</p>
+    <content><![CDATA[<h1 id="解决-103-105-116-64-103-105-x74-x68-117-98-46-x63-111-109-Permission-denied-publickey"><a href="#解决-103-105-116-64-103-105-x74-x68-117-98-46-x63-111-109-Permission-denied-publickey" class="headerlink" title="解决&#103;&#105;&#116;&#64;&#103;&#105;&#x74;&#x68;&#117;&#98;&#46;&#x63;&#111;&#109;: Permission denied (publickey)."></a>解决<a href="mailto:&#103;&#105;&#116;&#64;&#103;&#105;&#x74;&#x68;&#117;&#98;&#46;&#x63;&#111;&#109;">&#103;&#105;&#116;&#64;&#103;&#105;&#x74;&#x68;&#117;&#98;&#46;&#x63;&#111;&#109;</a>: Permission denied (publickey).</h1><p><strong><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600691414505-8704740b-63d0-4842-8287-b80d8c9c6463.png#align=left&display=inline&height=271&margin=%5Bobject%20Object%5D&name=image.png&originHeight=271&originWidth=672&size=127432&status=done&style=none&width=672" alt="image.png"></strong><br /><strong>原因分析</strong><br />Permission denied (publickey) 没有权限的publickey ，<br />出现这错误一般是以下两种原因</p>
 <ul>
 <li>客户端与服务端未生成 ssh key</li>
 <li>客户端与服务端的ssh key不匹配</li>
