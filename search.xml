@@ -175,33 +175,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Git配置多个SSHkey</title>
-    <url>/2020/09/21/Git%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AASSHkey/</url>
-    <content><![CDATA[<p><a name="article-header0"></a></p>
-<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>当有多个git账号时，比如：<br />a. 一个gitee，用于公司内部的工作开发；<br />b. 一个github，用于自己进行一些开发活动；<br><a name="article-header1"></a></p>
-<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><ol>
-<li>生成一个公司用的SSH-Key</li>
-</ol>
-<p><code>$ ssh-keygen -t rsa -C &#39;xxxxx@company.com&#39; -f ~/.ssh/gitee_id_rsa</code></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">(注意修改为自己的 email ) </span><br><span class="line">ssh-keygen -t rsa -C &#x27;xxxxx@company.com&#x27; -f ~/.ssh/gitee_id_rsa</span><br><span class="line"> </span><br><span class="line"> 代码参数含义：</span><br><span class="line"></span><br><span class="line">-t 指定密钥类型，默认是 rsa ，可以省略。</span><br><span class="line">-C 设置注释文字，比如邮箱。</span><br><span class="line">-f 指定密钥文件存储文件名。</span><br><span class="line"></span><br><span class="line">注：可全部选择默认即为空格跳过</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600592788808-48350c9b-b92a-4d54-94da-ad0a6daf19c9.png#align=left&display=inline&height=422&margin=%5Bobject%20Object%5D&name=image.png&originHeight=422&originWidth=881&size=337950&status=done&style=none&width=881" alt="image.png"></p>
-<ol start="2">
-<li>生成一个github用的SSH-Key</li>
-</ol>
-<p><code>$ ssh-keygen -t rsa -C &#39;xxxxx@qq.com&#39; -f ~/.ssh/github_id_rsa</code></p>
-<ol start="3">
-<li>在 ~/.ssh 目录下新建一个config文件，添加如下内容（其中Host和HostName填写git服务器的域名，IdentityFile指定私钥的路径）<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> gitee</span></span><br><span class="line">Host gitee.com</span><br><span class="line">HostName gitee.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/gitee_id_rsa</span><br><span class="line"><span class="meta">#</span><span class="bash"> github</span></span><br><span class="line">Host github.com</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/github_id_rsa</span><br></pre></td></tr></table></figure></li>
-<li>用ssh命令分别测试<br /><code>$ ssh -T git@gitee.com</code><br /><code>$ ssh -T git@github.com</code><br />这里以gitee为例，成功的话会返回下图内容<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600693883785-f2d24c00-be1c-4281-a896-b0b96018a4d0.png#align=left&display=inline&height=160&margin=%5Bobject%20Object%5D&name=image.png&originHeight=160&originWidth=852&size=140561&status=done&style=none&width=852" alt="image.png"><br /></li>
-</ol>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Fiddler 弱网测试</title>
     <url>/2020/09/23/Fiddler-%E5%BC%B1%E7%BD%91%E6%B5%8B%E8%AF%95/</url>
     <content><![CDATA[<p><a name="zkS6E"></a></p>
@@ -280,12 +253,24 @@
       </tags>
   </entry>
   <entry>
-    <title>git中fatal: Authentication failed的问题</title>
-    <url>/2020/09/23/git%E4%B8%ADfatal-Authentication-failed%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p><a name="GmEx1"></a></p>
-<h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述:"></a>问题描述:</h4><p>有些情况下, 在进行git的远程操作的情况下, 会报一个这样的错误<code>fatal: Authentication failed for &#39;http://对应的git仓库项目地址&#39;;</code><br><a name="h3Ur8"></a></p>
-<h4 id="分析问题"><a href="#分析问题" class="headerlink" title="分析问题:"></a>分析问题:</h4><p>报错的意思是凭证失效;<br />我遇到的情况比较尴尬，手残输入了错误的密码，结果就一直报错，不再弹出输入账号密码的弹窗；<br><a name="1sAtm"></a></p>
-<h4 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题:"></a>解决问题:</h4><p>1.在控制面板下找到凭据管理器, 如下图:<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1599741607840-a0408d9f-7697-4f6e-a9c5-1b5d33408264.png#align=left&display=inline&height=397&margin=%5Bobject%20Object%5D&originHeight=397&originWidth=800&size=0&status=done&style=none&width=800"><br /><br><br />2.点进去, 选择Windows凭据, 然后选择对应的那一条git凭据进行修改或者删除就OK.<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1599741608076-c16239ae-2077-458e-b37a-d87b5a445e35.png#align=left&display=inline&height=483&margin=%5Bobject%20Object%5D&originHeight=483&originWidth=800&size=0&status=done&style=none&width=800"><br />3.再次进行git操作时输入账号密码即可.</p>
+    <title>Git配置多个SSHkey</title>
+    <url>/2020/09/21/Git%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AASSHkey/</url>
+    <content><![CDATA[<p><a name="article-header0"></a></p>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>当有多个git账号时，比如：<br />a. 一个gitee，用于公司内部的工作开发；<br />b. 一个github，用于自己进行一些开发活动；<br><a name="article-header1"></a></p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><ol>
+<li>生成一个公司用的SSH-Key</li>
+</ol>
+<p><code>$ ssh-keygen -t rsa -C &#39;xxxxx@company.com&#39; -f ~/.ssh/gitee_id_rsa</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">(注意修改为自己的 email ) </span><br><span class="line">ssh-keygen -t rsa -C &#x27;xxxxx@company.com&#x27; -f ~/.ssh/gitee_id_rsa</span><br><span class="line"> </span><br><span class="line"> 代码参数含义：</span><br><span class="line"></span><br><span class="line">-t 指定密钥类型，默认是 rsa ，可以省略。</span><br><span class="line">-C 设置注释文字，比如邮箱。</span><br><span class="line">-f 指定密钥文件存储文件名。</span><br><span class="line"></span><br><span class="line">注：可全部选择默认即为空格跳过</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600592788808-48350c9b-b92a-4d54-94da-ad0a6daf19c9.png#align=left&display=inline&height=422&margin=%5Bobject%20Object%5D&name=image.png&originHeight=422&originWidth=881&size=337950&status=done&style=none&width=881" alt="image.png"></p>
+<ol start="2">
+<li>生成一个github用的SSH-Key</li>
+</ol>
+<p><code>$ ssh-keygen -t rsa -C &#39;xxxxx@qq.com&#39; -f ~/.ssh/github_id_rsa</code></p>
+<ol start="3">
+<li>在 ~/.ssh 目录下新建一个config文件，添加如下内容（其中Host和HostName填写git服务器的域名，IdentityFile指定私钥的路径）<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> gitee</span></span><br><span class="line">Host gitee.com</span><br><span class="line">HostName gitee.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/gitee_id_rsa</span><br><span class="line"><span class="meta">#</span><span class="bash"> github</span></span><br><span class="line">Host github.com</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/github_id_rsa</span><br></pre></td></tr></table></figure></li>
+<li>用ssh命令分别测试<br /><code>$ ssh -T git@gitee.com</code><br /><code>$ ssh -T git@github.com</code><br />这里以gitee为例，成功的话会返回下图内容<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600693883785-f2d24c00-be1c-4281-a896-b0b96018a4d0.png#align=left&display=inline&height=160&margin=%5Bobject%20Object%5D&name=image.png&originHeight=160&originWidth=852&size=140561&status=done&style=none&width=852" alt="image.png"><br /></li>
+</ol>
 ]]></content>
       <categories>
         <category>笔记</category>
@@ -531,6 +516,21 @@
       </tags>
   </entry>
   <entry>
+    <title>git中fatal: Authentication failed的问题</title>
+    <url>/2020/09/23/git%E4%B8%ADfatal-Authentication-failed%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p><a name="GmEx1"></a></p>
+<h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述:"></a>问题描述:</h4><p>有些情况下, 在进行git的远程操作的情况下, 会报一个这样的错误<code>fatal: Authentication failed for &#39;http://对应的git仓库项目地址&#39;;</code><br><a name="h3Ur8"></a></p>
+<h4 id="分析问题"><a href="#分析问题" class="headerlink" title="分析问题:"></a>分析问题:</h4><p>报错的意思是凭证失效;<br />我遇到的情况比较尴尬，手残输入了错误的密码，结果就一直报错，不再弹出输入账号密码的弹窗；<br><a name="1sAtm"></a></p>
+<h4 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题:"></a>解决问题:</h4><p>1.在控制面板下找到凭据管理器, 如下图:<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1599741607840-a0408d9f-7697-4f6e-a9c5-1b5d33408264.png#align=left&display=inline&height=397&margin=%5Bobject%20Object%5D&originHeight=397&originWidth=800&size=0&status=done&style=none&width=800"><br /><br><br />2.点进去, 选择Windows凭据, 然后选择对应的那一条git凭据进行修改或者删除就OK.<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1599741608076-c16239ae-2077-458e-b37a-d87b5a445e35.png#align=left&display=inline&height=483&margin=%5Bobject%20Object%5D&originHeight=483&originWidth=800&size=0&status=done&style=none&width=800"><br />3.再次进行git操作时输入账号密码即可.</p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>git常用命令</title>
     <url>/2020/09/21/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<h1 id="一般来说，日常使用只要记住下图6个命令。"><a href="#一般来说，日常使用只要记住下图6个命令。" class="headerlink" title="一般来说，日常使用只要记住下图6个命令。"></a>一般来说，日常使用只要记住下图6个命令。</h1><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png" alt="img"></p>
@@ -584,6 +584,21 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo博客pure主题添加404公益页面</title>
+    <url>/2020/09/22/hexo%E5%8D%9A%E5%AE%A2pure%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0404%E5%85%AC%E7%9B%8A%E9%A1%B5%E9%9D%A2/</url>
+    <content><![CDATA[<p><a name="awi8Q"></a></p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><p><strong>GitHub Pages有提供制作404页面的指引：</strong><a href="https://help.github.com/articles/custom-404-pages"><strong>Custom 404 Pages</strong></a><strong>。</strong><br /><strong>但是自定义404页面仅对绑定顶级域名的项目才起作用，GitHub默认分配的二级域名是不起作用的，使用hexo server在本机调试也是不起作用的。</strong></p>
+<p><strong>使用方法：新建<code>404.html</code> 页面，放到theme/pure主题的 source 目录下，内容如下：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta http-equiv&#x3D;&quot;content-type&quot; content&#x3D;&quot;text&#x2F;html;charset&#x3D;utf-8;&quot;&#x2F;&gt;</span><br><span class="line">  &lt;meta http-equiv&#x3D;&quot;X-UA-Compatible&quot; content&#x3D;&quot;IE&#x3D;edge,chrome&#x3D;1&quot; &#x2F;&gt;</span><br><span class="line">  &lt;meta name&#x3D;&quot;robots&quot; content&#x3D;&quot;all&quot; &#x2F;&gt;</span><br><span class="line">  &lt;meta name&#x3D;&quot;robots&quot; content&#x3D;&quot;index,follow&quot;&#x2F;&gt;</span><br><span class="line">  &lt;link rel&#x3D;&quot;stylesheet&quot; type&#x3D;&quot;text&#x2F;css&quot; href&#x3D;&quot;https:&#x2F;&#x2F;qzone.qq.com&#x2F;gy&#x2F;404&#x2F;style&#x2F;404style.css&quot;&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;script type&#x3D;&quot;text&#x2F;plain&quot; src&#x3D;&quot;http:&#x2F;&#x2F;www.qq.com&#x2F;404&#x2F;search_children.js&quot;</span><br><span class="line">          charset&#x3D;&quot;utf-8&quot; homePageUrl&#x3D;&quot;&#x2F;&quot;</span><br><span class="line">          homePageName&#x3D;&quot;回到我的主页&quot;&gt;</span><br><span class="line">  &lt;&#x2F;script&gt;</span><br><span class="line">  &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;qzone.qq.com&#x2F;gy&#x2F;404&#x2F;data.js&quot; charset&#x3D;&quot;utf-8&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">  &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;qzone.qq.com&#x2F;gy&#x2F;404&#x2F;page.js&quot; charset&#x3D;&quot;utf-8&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2020/06/07/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -600,41 +615,6 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>hexo博客pure主题添加404公益页面</title>
-    <url>/2020/09/22/hexo%E5%8D%9A%E5%AE%A2pure%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0404%E5%85%AC%E7%9B%8A%E9%A1%B5%E9%9D%A2/</url>
-    <content><![CDATA[<p><a name="awi8Q"></a></p>
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3><p><strong>GitHub Pages有提供制作404页面的指引：</strong><a href="https://help.github.com/articles/custom-404-pages"><strong>Custom 404 Pages</strong></a><strong>。</strong><br /><strong>但是自定义404页面仅对绑定顶级域名的项目才起作用，GitHub默认分配的二级域名是不起作用的，使用hexo server在本机调试也是不起作用的。</strong></p>
-<p><strong>使用方法：新建<code>404.html</code> 页面，放到theme/pure主题的 source 目录下，内容如下：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta http-equiv&#x3D;&quot;content-type&quot; content&#x3D;&quot;text&#x2F;html;charset&#x3D;utf-8;&quot;&#x2F;&gt;</span><br><span class="line">  &lt;meta http-equiv&#x3D;&quot;X-UA-Compatible&quot; content&#x3D;&quot;IE&#x3D;edge,chrome&#x3D;1&quot; &#x2F;&gt;</span><br><span class="line">  &lt;meta name&#x3D;&quot;robots&quot; content&#x3D;&quot;all&quot; &#x2F;&gt;</span><br><span class="line">  &lt;meta name&#x3D;&quot;robots&quot; content&#x3D;&quot;index,follow&quot;&#x2F;&gt;</span><br><span class="line">  &lt;link rel&#x3D;&quot;stylesheet&quot; type&#x3D;&quot;text&#x2F;css&quot; href&#x3D;&quot;https:&#x2F;&#x2F;qzone.qq.com&#x2F;gy&#x2F;404&#x2F;style&#x2F;404style.css&quot;&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;script type&#x3D;&quot;text&#x2F;plain&quot; src&#x3D;&quot;http:&#x2F;&#x2F;www.qq.com&#x2F;404&#x2F;search_children.js&quot;</span><br><span class="line">          charset&#x3D;&quot;utf-8&quot; homePageUrl&#x3D;&quot;&#x2F;&quot;</span><br><span class="line">          homePageName&#x3D;&quot;回到我的主页&quot;&gt;</span><br><span class="line">  &lt;&#x2F;script&gt;</span><br><span class="line">  &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;qzone.qq.com&#x2F;gy&#x2F;404&#x2F;data.js&quot; charset&#x3D;&quot;utf-8&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">  &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;qzone.qq.com&#x2F;gy&#x2F;404&#x2F;page.js&quot; charset&#x3D;&quot;utf-8&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo博客pure主题使用Valine无后端评论系统</title>
-    <url>/2020/09/22/hexo%E5%8D%9A%E5%AE%A2pure%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8Valine%E6%97%A0%E5%90%8E%E7%AB%AF%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<p><a name="aOvg0"></a></p>
-<h2 id="Valine"><a href="#Valine" class="headerlink" title="Valine"></a>Valine</h2><p>一个无后端的评论框工具, 其依赖于 <a href="https://leancloud.cn/">Leancloud</a> 开发, 所以使用前需要先注册 <a href="https://leancloud.cn/">Leancloud</a> 账号<br />如何开始? 你可以从 <a href="https://valine.js.org/quickstart.html">Valine-快速开始</a> 教程开始, 教程包含了一步一步的指引教程.<br /></p>
-<p><a name="AvWPY"></a></p>
-<h2 id="获取APP-ID-和-APP-Key"><a href="#获取APP-ID-和-APP-Key" class="headerlink" title="获取APP ID 和 APP Key"></a>获取APP ID 和 APP Key</h2><p>请先<a href="https://leancloud.cn/dashboard/login.html#/signin">登录</a>或<a href="https://leancloud.cn/dashboard/login.html#/signup">注册</a> <code>LeanCloud</code>, 进入<a href="https://leancloud.cn/dashboard/applist.html#/apps">控制台</a>后点击左下角<a href="https://leancloud.cn/dashboard/applist.html#/newapp">创建应用</a>：<br /><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/1464016/1600780153262-ad789d3f-a36d-46f7-b9c1-632fbab64b39.jpeg#align=left&display=inline&height=456&margin=%5Bobject%20Object%5D&originHeight=456&originWidth=616&size=0&status=done&style=none&width=616"><br />应用创建好以后，进入刚刚创建的应用，选择左下角的<code>设置</code>&gt;<code>应用Key</code>，然后就能看到你的<code>APP ID</code>和<code>APP Key</code>了：<br /><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/1464016/1600780153286-f8b64ffc-91b0-454f-9546-c09b20aae43f.jpeg#align=left&display=inline&height=533&margin=%5Bobject%20Object%5D&originHeight=533&originWidth=1202&size=0&status=done&style=none&width=1202"><br><a name="jxNzJ"></a></p>
-<h5 id=""><a href="#" class="headerlink" title=""></a></h5><p><a name="x76kb"></a></p>
-<h5 id="Valine配置项"><a href="#Valine配置项" class="headerlink" title="Valine配置项"></a>Valine配置项</h5><p>主题valine评论框提供了以下配置项</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">valine:</span> <span class="comment"># Valine官方地址: https://valine.js.org</span></span><br><span class="line">  <span class="attr">appid:</span>  <span class="comment"># 你的 leancloud 应用 appid</span></span><br><span class="line">  <span class="attr">appkey:</span>  <span class="comment"># 你的 leancloud 应用 appkey</span></span><br><span class="line">  <span class="attr">notify:</span> <span class="literal">true</span> <span class="comment"># 是否开始评论邮件提醒, 教程: https://github.com/xCss/Valine/wiki</span></span><br><span class="line">  <span class="attr">verify:</span> <span class="literal">false</span> <span class="comment"># 是否开始验证码功能, 开始邮件提醒会自动开启验证码功能</span></span><br><span class="line">  <span class="attr">placeholder:</span> <span class="string">说点什么...</span> <span class="comment"># 输入框默认内容</span></span><br><span class="line">  <span class="attr">avatar:</span> <span class="string">mm</span> <span class="comment"># 头像展示方式, 具体设置项教程: https://valine.js.org/configuration.html#avatar</span></span><br><span class="line">  <span class="attr">meta:</span> <span class="string">nick,mail,link</span> <span class="comment"># 自定义评论信息</span></span><br><span class="line">  <span class="attr">pageSize:</span> <span class="number">10</span> <span class="comment"># 评论列表分页</span></span><br><span class="line">  <span class="attr">lang:</span> <span class="string">zh-cn,</span> <span class="comment"># 多语言支持 zh-cn | en</span></span><br><span class="line">  <span class="attr">visitor:</span> <span class="literal">true</span> <span class="comment"># 文章阅读量统计:  https://valine.js.org/visitor.html</span></span><br><span class="line">  <span class="attr">highlight:</span> <span class="literal">true</span> <span class="comment"># 代码高亮</span></span><br><span class="line">  <span class="attr">recordIP:</span> <span class="literal">true</span> <span class="comment"># 记录评论者的IP</span></span><br></pre></td></tr></table></figure>
-<p><a name="uTjsL"></a></p>
-<h2 id="评论数据管理"><a href="#评论数据管理" class="headerlink" title="评论数据管理"></a>评论数据管理</h2><p>由于Valine 是无后端评论系统，所以也就没有开发评论数据管理功能。请自行登录<code>Leancloud应用</code>管理。<br />具体步骤：<code>登录</code>&gt;<code>选择你创建的应用</code>&gt;<code>存储</code>&gt;选择Class <code>Comment</code>，然后就可以尽情的发挥你的权利啦(～￣▽￣)～<br /></p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
   </entry>
   <entry>
     <title>hexo博客的pure主题添加动态背景</title>
@@ -678,6 +658,26 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo博客pure主题使用Valine无后端评论系统</title>
+    <url>/2020/09/22/hexo%E5%8D%9A%E5%AE%A2pure%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8Valine%E6%97%A0%E5%90%8E%E7%AB%AF%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p><a name="aOvg0"></a></p>
+<h2 id="Valine"><a href="#Valine" class="headerlink" title="Valine"></a>Valine</h2><p>一个无后端的评论框工具, 其依赖于 <a href="https://leancloud.cn/">Leancloud</a> 开发, 所以使用前需要先注册 <a href="https://leancloud.cn/">Leancloud</a> 账号<br />如何开始? 你可以从 <a href="https://valine.js.org/quickstart.html">Valine-快速开始</a> 教程开始, 教程包含了一步一步的指引教程.<br /></p>
+<p><a name="AvWPY"></a></p>
+<h2 id="获取APP-ID-和-APP-Key"><a href="#获取APP-ID-和-APP-Key" class="headerlink" title="获取APP ID 和 APP Key"></a>获取APP ID 和 APP Key</h2><p>请先<a href="https://leancloud.cn/dashboard/login.html#/signin">登录</a>或<a href="https://leancloud.cn/dashboard/login.html#/signup">注册</a> <code>LeanCloud</code>, 进入<a href="https://leancloud.cn/dashboard/applist.html#/apps">控制台</a>后点击左下角<a href="https://leancloud.cn/dashboard/applist.html#/newapp">创建应用</a>：<br /><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/1464016/1600780153262-ad789d3f-a36d-46f7-b9c1-632fbab64b39.jpeg#align=left&display=inline&height=456&margin=%5Bobject%20Object%5D&originHeight=456&originWidth=616&size=0&status=done&style=none&width=616"><br />应用创建好以后，进入刚刚创建的应用，选择左下角的<code>设置</code>&gt;<code>应用Key</code>，然后就能看到你的<code>APP ID</code>和<code>APP Key</code>了：<br /><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/1464016/1600780153286-f8b64ffc-91b0-454f-9546-c09b20aae43f.jpeg#align=left&display=inline&height=533&margin=%5Bobject%20Object%5D&originHeight=533&originWidth=1202&size=0&status=done&style=none&width=1202"><br><a name="jxNzJ"></a></p>
+<h5 id=""><a href="#" class="headerlink" title=""></a></h5><p><a name="x76kb"></a></p>
+<h5 id="Valine配置项"><a href="#Valine配置项" class="headerlink" title="Valine配置项"></a>Valine配置项</h5><p>主题valine评论框提供了以下配置项</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">valine:</span> <span class="comment"># Valine官方地址: https://valine.js.org</span></span><br><span class="line">  <span class="attr">appid:</span>  <span class="comment"># 你的 leancloud 应用 appid</span></span><br><span class="line">  <span class="attr">appkey:</span>  <span class="comment"># 你的 leancloud 应用 appkey</span></span><br><span class="line">  <span class="attr">notify:</span> <span class="literal">true</span> <span class="comment"># 是否开始评论邮件提醒, 教程: https://github.com/xCss/Valine/wiki</span></span><br><span class="line">  <span class="attr">verify:</span> <span class="literal">false</span> <span class="comment"># 是否开始验证码功能, 开始邮件提醒会自动开启验证码功能</span></span><br><span class="line">  <span class="attr">placeholder:</span> <span class="string">说点什么...</span> <span class="comment"># 输入框默认内容</span></span><br><span class="line">  <span class="attr">avatar:</span> <span class="string">mm</span> <span class="comment"># 头像展示方式, 具体设置项教程: https://valine.js.org/configuration.html#avatar</span></span><br><span class="line">  <span class="attr">meta:</span> <span class="string">nick,mail,link</span> <span class="comment"># 自定义评论信息</span></span><br><span class="line">  <span class="attr">pageSize:</span> <span class="number">10</span> <span class="comment"># 评论列表分页</span></span><br><span class="line">  <span class="attr">lang:</span> <span class="string">zh-cn,</span> <span class="comment"># 多语言支持 zh-cn | en</span></span><br><span class="line">  <span class="attr">visitor:</span> <span class="literal">true</span> <span class="comment"># 文章阅读量统计:  https://valine.js.org/visitor.html</span></span><br><span class="line">  <span class="attr">highlight:</span> <span class="literal">true</span> <span class="comment"># 代码高亮</span></span><br><span class="line">  <span class="attr">recordIP:</span> <span class="literal">true</span> <span class="comment"># 记录评论者的IP</span></span><br></pre></td></tr></table></figure>
+<p><a name="uTjsL"></a></p>
+<h2 id="评论数据管理"><a href="#评论数据管理" class="headerlink" title="评论数据管理"></a>评论数据管理</h2><p>由于Valine 是无后端评论系统，所以也就没有开发评论数据管理功能。请自行登录<code>Leancloud应用</code>管理。<br />具体步骤：<code>登录</code>&gt;<code>选择你创建的应用</code>&gt;<code>存储</code>&gt;选择Class <code>Comment</code>，然后就可以尽情的发挥你的权利啦(～￣▽￣)～<br /></p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我的第一篇博客</title>
     <url>/2020/06/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h1 id="第一篇文章测试"><a href="#第一篇文章测试" class="headerlink" title="第一篇文章测试"></a>第一篇文章测试</h1><h2 id="第一章-内容-——–"><a href="#第一章-内容-——–" class="headerlink" title="第一章 内容 ——–"></a>第一章 内容 ——–</h2><h2 id="第二章-内容-——–"><a href="#第二章-内容-——–" class="headerlink" title="第二章 内容 ——–"></a>第二章 内容 ——–</h2><h2 id="第三章-内容-——–"><a href="#第三章-内容-——–" class="headerlink" title="第三章 内容 ——–"></a>第三章 内容 ——–</h2><h2 id="参考文献-内容-——–"><a href="#参考文献-内容-——–" class="headerlink" title="参考文献 内容 ——–"></a>参考文献 内容 ——–</h2>]]></content>
@@ -688,7 +688,7 @@
   <entry>
     <title>解决git@github.com: Permission denied (publickey).</title>
     <url>/2020/09/21/%E8%A7%A3%E5%86%B3git-github-com-Permission-denied-publickey/</url>
-    <content><![CDATA[<h1 id="解决-x67-x69-116-64-x67-x69-116-104-x75-x62-46-x63-111-x6d-Permission-denied-publickey"><a href="#解决-x67-x69-116-64-x67-x69-116-104-x75-x62-46-x63-111-x6d-Permission-denied-publickey" class="headerlink" title="解决&#x67;&#x69;&#116;&#64;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#46;&#x63;&#111;&#x6d;: Permission denied (publickey)."></a>解决<a href="mailto:&#x67;&#x69;&#116;&#64;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#46;&#x63;&#111;&#x6d;">&#x67;&#x69;&#116;&#64;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#46;&#x63;&#111;&#x6d;</a>: Permission denied (publickey).</h1><p><strong><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600691414505-8704740b-63d0-4842-8287-b80d8c9c6463.png#align=left&display=inline&height=271&margin=%5Bobject%20Object%5D&name=image.png&originHeight=271&originWidth=672&size=127432&status=done&style=none&width=672" alt="image.png"></strong><br /><strong>原因分析</strong><br />Permission denied (publickey) 没有权限的publickey ，<br />出现这错误一般是以下两种原因</p>
+    <content><![CDATA[<h1 id="解决-x67-x69-116-x40-103-x69-116-104-x75-98-x2e-x63-x6f-109-Permission-denied-publickey"><a href="#解决-x67-x69-116-x40-103-x69-116-104-x75-98-x2e-x63-x6f-109-Permission-denied-publickey" class="headerlink" title="解决&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#104;&#x75;&#98;&#x2e;&#x63;&#x6f;&#109;: Permission denied (publickey)."></a>解决<a href="mailto:&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#104;&#x75;&#98;&#x2e;&#x63;&#x6f;&#109;">&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#104;&#x75;&#98;&#x2e;&#x63;&#x6f;&#109;</a>: Permission denied (publickey).</h1><p><strong><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600691414505-8704740b-63d0-4842-8287-b80d8c9c6463.png#align=left&display=inline&height=271&margin=%5Bobject%20Object%5D&name=image.png&originHeight=271&originWidth=672&size=127432&status=done&style=none&width=672" alt="image.png"></strong><br /><strong>原因分析</strong><br />Permission denied (publickey) 没有权限的publickey ，<br />出现这错误一般是以下两种原因</p>
 <ul>
 <li>客户端与服务端未生成 ssh key</li>
 <li>客户端与服务端的ssh key不匹配</li>
