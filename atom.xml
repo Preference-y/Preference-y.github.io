@@ -6,7 +6,7 @@
   <link href="https://preference-y.github.io/atom.xml" rel="self"/>
   
   <link href="https://preference-y.github.io/"/>
-  <updated>2020-11-02T03:45:05.356Z</updated>
+  <updated>2020-11-02T03:49:15.099Z</updated>
   <id>https://preference-y.github.io/</id>
   
   <author>
@@ -21,16 +21,15 @@
     <link href="https://preference-y.github.io/2020/11/02/VMware15%E4%B8%8BMACOS15-10%E4%BF%AE%E6%94%B9%E5%88%86%E8%BE%A8%E7%8E%87/"/>
     <id>https://preference-y.github.io/2020/11/02/VMware15%E4%B8%8BMACOS15-10%E4%BF%AE%E6%94%B9%E5%88%86%E8%BE%A8%E7%8E%87/</id>
     <published>2020-11-02T03:36:21.000Z</published>
-    <updated>2020-11-02T03:45:05.356Z</updated>
+    <updated>2020-11-02T03:49:15.099Z</updated>
     
     
       
       
-    <summary type="html">&lt;p&gt;之前安装MACOS 14的时候只需要在vmx里面修改就可以，或者在macos下安装各种驱动+VM tools来解决。&lt;/p&gt;
-&lt;p&gt;在15版本中，以上各种百度出来的招全部废掉~&lt;/p&gt;
-&lt;p&gt;步骤：&lt;/p&gt;
+    <summary type="html">&lt;p&gt;在15版本中修改分辨率步骤：&lt;/p&gt;
 &lt;p&gt;1.安装VMware Tools，这就是个废话~&lt;/p&gt;
-&lt;</summary>
+&lt;p&gt;2.进入终端-&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;spa</summary>
       
     
     
@@ -38,7 +37,7 @@
     <category term="笔记" scheme="https://preference-y.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="VMware15,虚拟机" scheme="https://preference-y.github.io/tags/VMware15-%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    <category term="VMware15虚拟机" scheme="https://preference-y.github.io/tags/VMware15%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
     
   </entry>
   
@@ -336,7 +335,7 @@
     
       
       
-    <summary type="html">&lt;h1 id=&quot;解决-x67-x69-x74-64-x67-x69-x74-104-117-98-x2e-99-111-109-Permission-denied-publickey&quot;&gt;&lt;a href=&quot;#解决-x67-x69-x74-64-x67-x69-x74-104-117</summary>
+    <summary type="html">&lt;h1 id=&quot;解决-x67-105-116-64-x67-105-116-x68-117-x62-x2e-99-x6f-x6d-Permission-denied-publickey&quot;&gt;&lt;a href=&quot;#解决-x67-105-116-64-x67-105-116-x68-11</summary>
       
     
     
