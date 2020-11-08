@@ -280,6 +280,74 @@
       </tags>
   </entry>
   <entry>
+    <title>git中fatal: Authentication failed的问题</title>
+    <url>/2020/09/23/git%E4%B8%ADfatal-Authentication-failed%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p><a name="GmEx1"></a></p>
+<h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述:"></a>问题描述:</h4><p>有些情况下, 在进行git的远程操作的情况下, 会报一个这样的错误<code>fatal: Authentication failed for &#39;http://对应的git仓库项目地址&#39;;</code><br><a name="h3Ur8"></a></p>
+<h4 id="分析问题"><a href="#分析问题" class="headerlink" title="分析问题:"></a>分析问题:</h4><p>报错的意思是凭证失效;<br />我遇到的情况比较尴尬，手残输入了错误的密码，结果就一直报错，不再弹出输入账号密码的弹窗；<br><a name="1sAtm"></a></p>
+<h4 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题:"></a>解决问题:</h4><p>1.在控制面板下找到凭据管理器, 如下图:<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1599741607840-a0408d9f-7697-4f6e-a9c5-1b5d33408264.png#align=left&display=inline&height=397&margin=%5Bobject%20Object%5D&originHeight=397&originWidth=800&size=0&status=done&style=none&width=800"><br /><br><br />2.点进去, 选择Windows凭据, 然后选择对应的那一条git凭据进行修改或者删除就OK.<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1599741608076-c16239ae-2077-458e-b37a-d87b5a445e35.png#align=left&display=inline&height=483&margin=%5Bobject%20Object%5D&originHeight=483&originWidth=800&size=0&status=done&style=none&width=800"><br />3.再次进行git操作时输入账号密码即可.</p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git常用命令</title>
+    <url>/2020/09/21/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h1 id="一般来说，日常使用只要记住下图6个命令。"><a href="#一般来说，日常使用只要记住下图6个命令。" class="headerlink" title="一般来说，日常使用只要记住下图6个命令。"></a>一般来说，日常使用只要记住下图6个命令。</h1><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png" alt="img"></p>
+<p>下面是我整理的常用 Git 命令清单。几个专用名词的译名如下。</p>
+<blockquote>
+<ul>
+<li>Workspace：工作区</li>
+<li>Index / Stage：暂存区</li>
+<li>Repository：仓库区（或本地仓库）</li>
+<li>Remote：远程仓库</li>
+</ul>
+</blockquote>
+<h2 id="一、新建代码库"><a href="#一、新建代码库" class="headerlink" title="一、新建代码库"></a>一、新建代码库</h2><blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在当前目录新建一个Git代码库</span></span><br><span class="line">$ git init</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个目录，将其初始化为Git代码库</span></span><br><span class="line">$ git init [project-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载一个项目和它的整个代码历史</span></span><br><span class="line">$ git <span class="built_in">clone</span> [url]</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="二、配置"><a href="#二、配置" class="headerlink" title="二、配置"></a>二、配置</h2><p>Git的设置文件为<code>.gitconfig</code>，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。</p>
+<blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 显示当前的Git配置</span></span><br><span class="line">$ git config --list</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编辑Git配置文件</span></span><br><span class="line">$ git config -e [--global]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置提交代码时的用户信息</span></span><br><span class="line">$ git config [--global] user.name <span class="string">&quot;[name]&quot;</span></span><br><span class="line">$ git config [--global] user.email <span class="string">&quot;[email address]&quot;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="三、增加-删除文件"><a href="#三、增加-删除文件" class="headerlink" title="三、增加/删除文件"></a>三、增加/删除文件</h2><blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 添加指定文件到暂存区</span></span><br><span class="line">$ git add [file1] [file2] ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加指定目录到暂存区，包括子目录</span></span><br><span class="line">$ git add [dir]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加当前目录的所有文件到暂存区</span></span><br><span class="line">$ git add .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加每个变化前，都会要求确认</span></span><br><span class="line"><span class="comment"># 对于同一个文件的多处变化，可以实现分次提交</span></span><br><span class="line">$ git add -p</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除工作区文件，并且将这次删除放入暂存区</span></span><br><span class="line">$ git rm [file1] [file2] ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停止追踪指定文件，但该文件会保留在工作区</span></span><br><span class="line">$ git rm --cached [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 改名文件，并且将这个改名放入暂存区</span></span><br><span class="line">$ git mv [file-original] [file-renamed]</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="四、代码提交"><a href="#四、代码提交" class="headerlink" title="四、代码提交"></a>四、代码提交</h2><blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 提交暂存区到仓库区</span></span><br><span class="line">$ git commit -m [message]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交暂存区的指定文件到仓库区</span></span><br><span class="line">$ git commit [file1] [file2] ... -m [message]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交工作区自上次commit之后的变化，直接到仓库区</span></span><br><span class="line">$ git commit -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交时显示所有diff信息</span></span><br><span class="line">$ git commit -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用一次新的commit，替代上一次提交</span></span><br><span class="line"><span class="comment"># 如果代码没有任何新变化，则用来改写上一次commit的提交信息</span></span><br><span class="line">$ git commit --amend -m [message]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重做上一次commit，并包括指定文件的新变化</span></span><br><span class="line">$ git commit --amend [file1] [file2] ...</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="五、分支"><a href="#五、分支" class="headerlink" title="五、分支"></a>五、分支</h2><blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 列出所有本地分支</span></span><br><span class="line">$ git branch</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有远程分支</span></span><br><span class="line">$ git branch -r</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有本地分支和远程分支</span></span><br><span class="line">$ git branch -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个分支，但依然停留在当前分支</span></span><br><span class="line">$ git branch [branch-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个分支，并切换到该分支</span></span><br><span class="line">$ git checkout -b [branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个分支，指向指定commit</span></span><br><span class="line">$ git branch [branch] [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个分支，与指定的远程分支建立追踪关系</span></span><br><span class="line">$ git branch --track [branch] [remote-branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到指定分支，并更新工作区</span></span><br><span class="line">$ git checkout [branch-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到上一个分支</span></span><br><span class="line">$ git checkout -</span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立追踪关系，在现有分支与指定的远程分支之间</span></span><br><span class="line">$ git branch --set-upstream [branch] [remote-branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并指定分支到当前分支</span></span><br><span class="line">$ git merge [branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 选择一个commit，合并进当前分支</span></span><br><span class="line">$ git cherry-pick [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除分支</span></span><br><span class="line">$ git branch -d [branch-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除远程分支</span></span><br><span class="line">$ git push origin --delete [branch-name]</span><br><span class="line">$ git branch -dr [remote/branch]</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="六、标签"><a href="#六、标签" class="headerlink" title="六、标签"></a>六、标签</h2><blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 列出所有tag</span></span><br><span class="line">$ git tag</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个tag在当前commit</span></span><br><span class="line">$ git tag [tag]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个tag在指定commit</span></span><br><span class="line">$ git tag [tag] [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除本地tag</span></span><br><span class="line">$ git tag -d [tag]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除远程tag</span></span><br><span class="line">$ git push origin :refs/tags/[tagName]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看tag信息</span></span><br><span class="line">$ git show [tag]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交指定tag</span></span><br><span class="line">$ git push [remote] [tag]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交所有tag</span></span><br><span class="line">$ git push [remote] --tags</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个分支，指向某个tag</span></span><br><span class="line">$ git checkout -b [branch] [tag]</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="七、查看信息"><a href="#七、查看信息" class="headerlink" title="七、查看信息"></a>七、查看信息</h2><blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 显示有变更的文件</span></span><br><span class="line">$ git status</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示当前分支的版本历史</span></span><br><span class="line">$ git <span class="built_in">log</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示commit历史，以及每次commit发生变更的文件</span></span><br><span class="line">$ git <span class="built_in">log</span> --<span class="built_in">stat</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 搜索提交历史，根据关键词</span></span><br><span class="line">$ git <span class="built_in">log</span> -S [keyword]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某个commit之后的所有变动，每个commit占据一行</span></span><br><span class="line">$ git <span class="built_in">log</span> [tag] HEAD --pretty=format:%s</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某个commit之后的所有变动，其&quot;提交说明&quot;必须符合搜索条件</span></span><br><span class="line">$ git <span class="built_in">log</span> [tag] HEAD --grep feature</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某个文件的版本历史，包括文件改名</span></span><br><span class="line">$ git <span class="built_in">log</span> --follow [file]</span><br><span class="line">$ git whatchanged [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示指定文件相关的每一次diff</span></span><br><span class="line">$ git <span class="built_in">log</span> -p [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示过去5次提交</span></span><br><span class="line">$ git <span class="built_in">log</span> -5 --pretty --oneline</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示所有提交过的用户，按提交次数排序</span></span><br><span class="line">$ git shortlog -sn</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示指定文件是什么人在什么时间修改过</span></span><br><span class="line">$ git blame [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示暂存区和工作区的差异</span></span><br><span class="line">$ git diff</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示暂存区和上一个commit的差异</span></span><br><span class="line">$ git diff --cached [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示工作区与当前分支最新commit之间的差异</span></span><br><span class="line">$ git diff HEAD</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示两次提交之间的差异</span></span><br><span class="line">$ git diff [first-branch]...[second-branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示今天你写了多少行代码</span></span><br><span class="line">$ git diff --shortstat <span class="string">&quot;@&#123;0 day ago&#125;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某次提交的元数据和内容变化</span></span><br><span class="line">$ git show [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某次提交发生变化的文件</span></span><br><span class="line">$ git show --name-only [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某次提交时，某个文件的内容</span></span><br><span class="line">$ git show [commit]:[filename]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示当前分支的最近几次提交</span></span><br><span class="line">$ git reflog</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="八、远程同步"><a href="#八、远程同步" class="headerlink" title="八、远程同步"></a>八、远程同步</h2><blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 下载远程仓库的所有变动</span></span><br><span class="line">$ git fetch [remote]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示所有远程仓库</span></span><br><span class="line">$ git remote -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某个远程仓库的信息</span></span><br><span class="line">$ git remote show [remote]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 增加一个新的远程仓库，并命名</span></span><br><span class="line">$ git remote add [shortname] [url]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取回远程仓库的变化，并与本地分支合并</span></span><br><span class="line">$ git pull [remote] [branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 上传本地指定分支到远程仓库</span></span><br><span class="line">$ git push [remote] [branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 强行推送当前分支到远程仓库，即使有冲突</span></span><br><span class="line">$ git push [remote] --force</span><br><span class="line"></span><br><span class="line"><span class="comment"># 推送所有分支到远程仓库</span></span><br><span class="line">$ git push [remote] --all</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="九、撤销"><a href="#九、撤销" class="headerlink" title="九、撤销"></a>九、撤销</h2><blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 恢复暂存区的指定文件到工作区</span></span><br><span class="line">$ git checkout [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复某个commit的指定文件到暂存区和工作区</span></span><br><span class="line">$ git checkout [commit] [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复暂存区的所有文件到工作区</span></span><br><span class="line">$ git checkout .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</span></span><br><span class="line">$ git reset [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重置暂存区与工作区，与上一次commit保持一致</span></span><br><span class="line">$ git reset --hard</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变</span></span><br><span class="line">$ git reset [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</span></span><br><span class="line">$ git reset --hard [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重置当前HEAD为指定commit，但保持暂存区和工作区不变</span></span><br><span class="line">$ git reset --keep [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个commit，用来撤销指定commit</span></span><br><span class="line"><span class="comment"># 后者的所有变化都将被前者抵消，并且应用到当前分支</span></span><br><span class="line">$ git revert [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 暂时将未提交的变化移除，稍后再移入</span></span><br><span class="line">$ git stash</span><br><span class="line">$ git stash pop</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="十、其他"><a href="#十、其他" class="headerlink" title="十、其他"></a>十、其他</h2><blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成一个可供发布的压缩包</span></span><br><span class="line">$ git archive</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>摘自<a href="http://www.ruanyifeng.com/">阮一峰</a></p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SQL笔记</title>
     <url>/2020/09/22/SQL%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p><a name="e28d2d92"></a></p>
@@ -516,92 +584,6 @@
       </tags>
   </entry>
   <entry>
-    <title>VMware15下MACOS15.10修改分辨率</title>
-    <url>/2020/11/02/VMware15%E4%B8%8BMACOS15-10%E4%BF%AE%E6%94%B9%E5%88%86%E8%BE%A8%E7%8E%87/</url>
-    <content><![CDATA[<p>在15版本中修改分辨率步骤：</p>
-<p>1.安装VMware Tools，这就是个废话~</p>
-<p>2.进入终端-</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo &#x2F;Library&#x2F;Application\ Support&#x2F;VMware\ Tools&#x2F;vmware-resolutionSet  1920 1080</span><br></pre></td></tr></table></figure>
-
-
-<p>想改1440x900就输入1440 900</p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>VMware15虚拟机</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>git常用命令</title>
-    <url>/2020/09/21/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h1 id="一般来说，日常使用只要记住下图6个命令。"><a href="#一般来说，日常使用只要记住下图6个命令。" class="headerlink" title="一般来说，日常使用只要记住下图6个命令。"></a>一般来说，日常使用只要记住下图6个命令。</h1><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png" alt="img"></p>
-<p>下面是我整理的常用 Git 命令清单。几个专用名词的译名如下。</p>
-<blockquote>
-<ul>
-<li>Workspace：工作区</li>
-<li>Index / Stage：暂存区</li>
-<li>Repository：仓库区（或本地仓库）</li>
-<li>Remote：远程仓库</li>
-</ul>
-</blockquote>
-<h2 id="一、新建代码库"><a href="#一、新建代码库" class="headerlink" title="一、新建代码库"></a>一、新建代码库</h2><blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在当前目录新建一个Git代码库</span></span><br><span class="line">$ git init</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个目录，将其初始化为Git代码库</span></span><br><span class="line">$ git init [project-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载一个项目和它的整个代码历史</span></span><br><span class="line">$ git <span class="built_in">clone</span> [url]</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h2 id="二、配置"><a href="#二、配置" class="headerlink" title="二、配置"></a>二、配置</h2><p>Git的设置文件为<code>.gitconfig</code>，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 显示当前的Git配置</span></span><br><span class="line">$ git config --list</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编辑Git配置文件</span></span><br><span class="line">$ git config -e [--global]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置提交代码时的用户信息</span></span><br><span class="line">$ git config [--global] user.name <span class="string">&quot;[name]&quot;</span></span><br><span class="line">$ git config [--global] user.email <span class="string">&quot;[email address]&quot;</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-<h2 id="三、增加-删除文件"><a href="#三、增加-删除文件" class="headerlink" title="三、增加/删除文件"></a>三、增加/删除文件</h2><blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 添加指定文件到暂存区</span></span><br><span class="line">$ git add [file1] [file2] ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加指定目录到暂存区，包括子目录</span></span><br><span class="line">$ git add [dir]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加当前目录的所有文件到暂存区</span></span><br><span class="line">$ git add .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加每个变化前，都会要求确认</span></span><br><span class="line"><span class="comment"># 对于同一个文件的多处变化，可以实现分次提交</span></span><br><span class="line">$ git add -p</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除工作区文件，并且将这次删除放入暂存区</span></span><br><span class="line">$ git rm [file1] [file2] ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停止追踪指定文件，但该文件会保留在工作区</span></span><br><span class="line">$ git rm --cached [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 改名文件，并且将这个改名放入暂存区</span></span><br><span class="line">$ git mv [file-original] [file-renamed]</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h2 id="四、代码提交"><a href="#四、代码提交" class="headerlink" title="四、代码提交"></a>四、代码提交</h2><blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 提交暂存区到仓库区</span></span><br><span class="line">$ git commit -m [message]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交暂存区的指定文件到仓库区</span></span><br><span class="line">$ git commit [file1] [file2] ... -m [message]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交工作区自上次commit之后的变化，直接到仓库区</span></span><br><span class="line">$ git commit -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交时显示所有diff信息</span></span><br><span class="line">$ git commit -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用一次新的commit，替代上一次提交</span></span><br><span class="line"><span class="comment"># 如果代码没有任何新变化，则用来改写上一次commit的提交信息</span></span><br><span class="line">$ git commit --amend -m [message]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重做上一次commit，并包括指定文件的新变化</span></span><br><span class="line">$ git commit --amend [file1] [file2] ...</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h2 id="五、分支"><a href="#五、分支" class="headerlink" title="五、分支"></a>五、分支</h2><blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 列出所有本地分支</span></span><br><span class="line">$ git branch</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有远程分支</span></span><br><span class="line">$ git branch -r</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有本地分支和远程分支</span></span><br><span class="line">$ git branch -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个分支，但依然停留在当前分支</span></span><br><span class="line">$ git branch [branch-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个分支，并切换到该分支</span></span><br><span class="line">$ git checkout -b [branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个分支，指向指定commit</span></span><br><span class="line">$ git branch [branch] [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个分支，与指定的远程分支建立追踪关系</span></span><br><span class="line">$ git branch --track [branch] [remote-branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到指定分支，并更新工作区</span></span><br><span class="line">$ git checkout [branch-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到上一个分支</span></span><br><span class="line">$ git checkout -</span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立追踪关系，在现有分支与指定的远程分支之间</span></span><br><span class="line">$ git branch --set-upstream [branch] [remote-branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并指定分支到当前分支</span></span><br><span class="line">$ git merge [branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 选择一个commit，合并进当前分支</span></span><br><span class="line">$ git cherry-pick [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除分支</span></span><br><span class="line">$ git branch -d [branch-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除远程分支</span></span><br><span class="line">$ git push origin --delete [branch-name]</span><br><span class="line">$ git branch -dr [remote/branch]</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h2 id="六、标签"><a href="#六、标签" class="headerlink" title="六、标签"></a>六、标签</h2><blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 列出所有tag</span></span><br><span class="line">$ git tag</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个tag在当前commit</span></span><br><span class="line">$ git tag [tag]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个tag在指定commit</span></span><br><span class="line">$ git tag [tag] [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除本地tag</span></span><br><span class="line">$ git tag -d [tag]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除远程tag</span></span><br><span class="line">$ git push origin :refs/tags/[tagName]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看tag信息</span></span><br><span class="line">$ git show [tag]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交指定tag</span></span><br><span class="line">$ git push [remote] [tag]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交所有tag</span></span><br><span class="line">$ git push [remote] --tags</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个分支，指向某个tag</span></span><br><span class="line">$ git checkout -b [branch] [tag]</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h2 id="七、查看信息"><a href="#七、查看信息" class="headerlink" title="七、查看信息"></a>七、查看信息</h2><blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 显示有变更的文件</span></span><br><span class="line">$ git status</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示当前分支的版本历史</span></span><br><span class="line">$ git <span class="built_in">log</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示commit历史，以及每次commit发生变更的文件</span></span><br><span class="line">$ git <span class="built_in">log</span> --<span class="built_in">stat</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 搜索提交历史，根据关键词</span></span><br><span class="line">$ git <span class="built_in">log</span> -S [keyword]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某个commit之后的所有变动，每个commit占据一行</span></span><br><span class="line">$ git <span class="built_in">log</span> [tag] HEAD --pretty=format:%s</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某个commit之后的所有变动，其&quot;提交说明&quot;必须符合搜索条件</span></span><br><span class="line">$ git <span class="built_in">log</span> [tag] HEAD --grep feature</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某个文件的版本历史，包括文件改名</span></span><br><span class="line">$ git <span class="built_in">log</span> --follow [file]</span><br><span class="line">$ git whatchanged [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示指定文件相关的每一次diff</span></span><br><span class="line">$ git <span class="built_in">log</span> -p [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示过去5次提交</span></span><br><span class="line">$ git <span class="built_in">log</span> -5 --pretty --oneline</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示所有提交过的用户，按提交次数排序</span></span><br><span class="line">$ git shortlog -sn</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示指定文件是什么人在什么时间修改过</span></span><br><span class="line">$ git blame [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示暂存区和工作区的差异</span></span><br><span class="line">$ git diff</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示暂存区和上一个commit的差异</span></span><br><span class="line">$ git diff --cached [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示工作区与当前分支最新commit之间的差异</span></span><br><span class="line">$ git diff HEAD</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示两次提交之间的差异</span></span><br><span class="line">$ git diff [first-branch]...[second-branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示今天你写了多少行代码</span></span><br><span class="line">$ git diff --shortstat <span class="string">&quot;@&#123;0 day ago&#125;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某次提交的元数据和内容变化</span></span><br><span class="line">$ git show [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某次提交发生变化的文件</span></span><br><span class="line">$ git show --name-only [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某次提交时，某个文件的内容</span></span><br><span class="line">$ git show [commit]:[filename]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示当前分支的最近几次提交</span></span><br><span class="line">$ git reflog</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h2 id="八、远程同步"><a href="#八、远程同步" class="headerlink" title="八、远程同步"></a>八、远程同步</h2><blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 下载远程仓库的所有变动</span></span><br><span class="line">$ git fetch [remote]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示所有远程仓库</span></span><br><span class="line">$ git remote -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某个远程仓库的信息</span></span><br><span class="line">$ git remote show [remote]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 增加一个新的远程仓库，并命名</span></span><br><span class="line">$ git remote add [shortname] [url]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取回远程仓库的变化，并与本地分支合并</span></span><br><span class="line">$ git pull [remote] [branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 上传本地指定分支到远程仓库</span></span><br><span class="line">$ git push [remote] [branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 强行推送当前分支到远程仓库，即使有冲突</span></span><br><span class="line">$ git push [remote] --force</span><br><span class="line"></span><br><span class="line"><span class="comment"># 推送所有分支到远程仓库</span></span><br><span class="line">$ git push [remote] --all</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h2 id="九、撤销"><a href="#九、撤销" class="headerlink" title="九、撤销"></a>九、撤销</h2><blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 恢复暂存区的指定文件到工作区</span></span><br><span class="line">$ git checkout [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复某个commit的指定文件到暂存区和工作区</span></span><br><span class="line">$ git checkout [commit] [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复暂存区的所有文件到工作区</span></span><br><span class="line">$ git checkout .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</span></span><br><span class="line">$ git reset [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重置暂存区与工作区，与上一次commit保持一致</span></span><br><span class="line">$ git reset --hard</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变</span></span><br><span class="line">$ git reset [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</span></span><br><span class="line">$ git reset --hard [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重置当前HEAD为指定commit，但保持暂存区和工作区不变</span></span><br><span class="line">$ git reset --keep [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个commit，用来撤销指定commit</span></span><br><span class="line"><span class="comment"># 后者的所有变化都将被前者抵消，并且应用到当前分支</span></span><br><span class="line">$ git revert [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 暂时将未提交的变化移除，稍后再移入</span></span><br><span class="line">$ git stash</span><br><span class="line">$ git stash pop</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h2 id="十、其他"><a href="#十、其他" class="headerlink" title="十、其他"></a>十、其他</h2><blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成一个可供发布的压缩包</span></span><br><span class="line">$ git archive</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>摘自<a href="http://www.ruanyifeng.com/">阮一峰</a></p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>git中fatal: Authentication failed的问题</title>
-    <url>/2020/09/23/git%E4%B8%ADfatal-Authentication-failed%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p><a name="GmEx1"></a></p>
-<h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述:"></a>问题描述:</h4><p>有些情况下, 在进行git的远程操作的情况下, 会报一个这样的错误<code>fatal: Authentication failed for &#39;http://对应的git仓库项目地址&#39;;</code><br><a name="h3Ur8"></a></p>
-<h4 id="分析问题"><a href="#分析问题" class="headerlink" title="分析问题:"></a>分析问题:</h4><p>报错的意思是凭证失效;<br />我遇到的情况比较尴尬，手残输入了错误的密码，结果就一直报错，不再弹出输入账号密码的弹窗；<br><a name="1sAtm"></a></p>
-<h4 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题:"></a>解决问题:</h4><p>1.在控制面板下找到凭据管理器, 如下图:<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1599741607840-a0408d9f-7697-4f6e-a9c5-1b5d33408264.png#align=left&display=inline&height=397&margin=%5Bobject%20Object%5D&originHeight=397&originWidth=800&size=0&status=done&style=none&width=800"><br /><br><br />2.点进去, 选择Windows凭据, 然后选择对应的那一条git凭据进行修改或者删除就OK.<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1599741608076-c16239ae-2077-458e-b37a-d87b5a445e35.png#align=left&display=inline&height=483&margin=%5Bobject%20Object%5D&originHeight=483&originWidth=800&size=0&status=done&style=none&width=800"><br />3.再次进行git操作时输入账号密码即可.</p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2020/06/07/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -618,6 +600,24 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>VMware15下MACOS15.10修改分辨率</title>
+    <url>/2020/11/02/VMware15%E4%B8%8BMACOS15-10%E4%BF%AE%E6%94%B9%E5%88%86%E8%BE%A8%E7%8E%87/</url>
+    <content><![CDATA[<p>在15版本中修改分辨率步骤：</p>
+<p>1.安装VMware Tools，这就是个废话~</p>
+<p>2.进入终端-</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo &#x2F;Library&#x2F;Application\ Support&#x2F;VMware\ Tools&#x2F;vmware-resolutionSet  1920 1080</span><br></pre></td></tr></table></figure>
+
+
+<p>想改1440x900就输入1440 900</p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>VMware15虚拟机</tag>
+      </tags>
   </entry>
   <entry>
     <title>hexo博客pure主题使用Valine无后端评论系统</title>
@@ -716,27 +716,23 @@
       </categories>
   </entry>
   <entry>
-    <title>解决hexo搭建的博客的翻页箭头显示代码bug</title>
-    <url>/2020/09/23/%E8%A7%A3%E5%86%B3hexo%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%BF%BB%E9%A1%B5%E7%AE%AD%E5%A4%B4%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81bug/</url>
-    <content><![CDATA[<p><a name="ircwS"></a></p>
-<h3 id="问题场景："><a href="#问题场景：" class="headerlink" title="问题场景："></a>问题场景：</h3><p><strong>hexo博客pure主题，分页显示bug，将代码显示出来了；</strong><br />如下所示：<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1601191802263-90500d93-9ae0-41fb-9969-bced4417f95a.png#align=left&display=inline&height=82&margin=%5Bobject%20Object%5D&name=image.png&originHeight=82&originWidth=684&size=5822&status=done&style=none&width=684" alt="image.png"><br /><strong>搭建好博客，上传文章数量多到需要分页时，发现翻页箭头显示了代码。。。 而不是’&gt;’</strong><br><a name="8z70g"></a></p>
-<h3 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h3><p><strong>找到 pagination.ejs中的 paginator 函数，添加 escape: false 试试，代码形如</strong>：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;%- paginator(&#123;</span><br><span class="line">                prev_text: &#39;&lt;i class&#x3D;&quot;icon icon-angle-left&quot;&gt;&lt;&#x2F;i&gt; &#39; + __(&#39;pagination.prev&#39;),</span><br><span class="line">                next_text: __(&#39;pagination.next&#39;) + &#39; &lt;i class&#x3D;&quot;icon icon-angle-right&quot;&gt;&lt;&#x2F;i&gt;&#39;,</span><br><span class="line">                escape: false</span><br><span class="line">            &#125;) %&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600796308874-4dcc4bb8-639b-4e42-917a-6a1332280c56.png#align=left&display=inline&height=279&margin=%5Bobject%20Object%5D&name=image.png&originHeight=279&originWidth=1106&size=42215&status=done&style=none&width=1106" alt="image.png"><br><a name="feVmL"></a></p>
-<h3 id="恢复正常："><a href="#恢复正常：" class="headerlink" title="恢复正常："></a>恢复正常：</h3><p><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600796621318-bad385ff-9dac-4b86-b49f-5306f47aaf83.png#align=left&display=inline&height=179&margin=%5Bobject%20Object%5D&name=image.png&originHeight=179&originWidth=519&size=14438&status=done&style=none&width=519" alt="image.png"></p>
+    <title>网络故障排除工具 | 快速定位网络故障</title>
+    <url>/2020/11/08/%E7%BD%91%E7%BB%9C%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4%E5%B7%A5%E5%85%B7-%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E7%BD%91%E7%BB%9C%E6%95%85%E9%9A%9C/</url>
+    <content><![CDATA[<p>出处：数据中心运维管理</p>
+<p>网络故障排除对于网络技术专家和网络工程师是颇具挑战的工作。每当添加新的设备或网络发生变更时，新的问题就会出现，而且很难确定问题出在哪里。每一位网络工程师或专家都有自己的经验和必备工具，能让他们快速定位网络故障。以下的这些工具，是否是你的工具箱中的选项。<br /><br><br /><strong>1. Nmap</strong><br />Nmap是开源工具，它被称作网络故障排除的“瑞士军刀”。它基本上是使用超级功能Ping，广播数据包来识别主机，包括主机的开放端口和操作系统版本。这些信息被集成到网络地图和清单中，从而使分析人员能够确定连接问题，漏洞和流量。<br /><br><br /><img src="https://cdn.nlark.com/yuque/0/2020/webp/1464016/1604817427566-29b58c75-d485-4e0a-96ff-536b33d662f9.webp#align=left&display=inline&height=84&margin=%5Bobject%20Object%5D&originHeight=392&originWidth=651&size=0&status=done&style=none&width=140"><br /><strong>2. Netstat</strong><br />随着网络复杂性的增加，需要简化网络管理让网络管理员的时间和输入更加有效。Netstat在类似于Unix的操作系统(包括Windows)上很有用。在处理网络安全性时，最好了解与企业网络的入站和出站连接。<br /><br><br /><strong>3. tcpdump</strong><br />tcpdump是网络专家必备的故障排除工具。如果可以有效地使用它，那么可以在不影响无关应用程序的情况下快速查明网络问题。<br /><br><br /><strong>4. Ping</strong><br />Ping是快速排除网络问题的最基础工具。可以轻松检查服务器是否已关闭，并且它在大多数操作系统中都可用。<br /><br><br /><strong>5. TRACERT和Traceroute</strong><br />对于任何网络团队而言，TRACERT和Traceroute都是重要的工具。他们可以深入了解数据采用的路径以及中间主机的响应时间。即使是最少量的信息也可以帮助阐明当前的问题。因此，在进行故障排除时，TRACERT和Traceroute无疑十分重要。<br /><br><br /><strong>6. My Traceroute (MTR)**</strong>MTR是诊断网络问题或仅探索网络性能的最佳工具之一。MTR将Ping和Traceroute的优点结合到一个工具中。是同时观察数据包丢失和等待时间的好方法。<br /><strong>7. Mockoon**</strong>Mockoon是新的工具。它允许网络专家创建模拟API并针对它们构建前端，而无需使用后端。通过将Mockoon与Charles结合使用，甚至可以在系统的某些部分中使用实时API，而在其他部分中使用模拟API，而来回切换的工作量很小。<br /><br><br /><strong>8. Wireshark**</strong>Wireshark是可用的最佳数据包捕获工具之一，并且是网络分析的必备工具。它用途广泛，速度快，并提供了广泛的工具和筛选器，可准确识别网络上正在发生的事情。<br /><br><br /><img src="https://cdn.nlark.com/yuque/0/2020/webp/1464016/1604817427554-f0946fd6-351b-4e40-88ef-6d1f25a75a85.webp#align=left&display=inline&height=105&margin=%5Bobject%20Object%5D&originHeight=499&originWidth=668&size=0&status=done&style=none&width=140"><br /><strong>9. OpenVAS**</strong>每个网络专家都应使用某种主动式漏洞扫描软件来检测网络威胁，在潜在威胁进入系统之前对其进行故障排除，而不是试图修复造成的破坏。建议使用Wireshark和OpenVAS之类的工具作为免费的开源工具，任何网络团队或专家都可以使用它们来识别对关键数据或系统的威胁。<br /><br><br /><img src="https://cdn.nlark.com/yuque/0/2020/webp/1464016/1604817427657-0adf8f77-ac48-4645-9894-24f34f02fbe4.webp#align=left&display=inline&height=109&margin=%5Bobject%20Object%5D&originHeight=467&originWidth=600&size=0&status=done&style=none&width=140"><br /><strong>10. Grey Matter**</strong>Grey Matter是通用网格。它是下一代的3、4、7网络层，利用基于C的代理实现零信任安全性，证据链审计合规性，目标细分和低级报告，并且它是开源工具。如果试图找出“服务网格”的用例，可进行一些研究。<br /><br><br /><strong>11. Linux系统Dig命令**</strong>Linux中的dig工具非常适合帮助解决站点可能位于的位置，关联的IP以及负载均衡后面的问题。<br /><br><br /><strong>12. DNS和NS查找工具**</strong>今天，DNS和NS查找工具应该出现在每个网络专家的工具箱中。从智能手机和笔记本电脑到物联网设备和网络设备，我们使用的每个设备都使用IP和DNS地址。IP和设备之间的冲突一直在网络上发生。可靠的查找工具可以帮助隔离有问题的设备，并缩小要采取的故障排除步骤。<br /><br><br /><strong>13. Speedtest-Plotter**</strong>速度和敏捷性对于生产力至关重要，尤其是随着远程工作的增加。Speedtest-Plotter是一款不错的网络故障排除工具，可使用附近的服务器来测量互联网带宽。可以跟踪一段时间内的速度(而不仅仅是一次分析)，同时确定连接性的相关变化。<br /><br><br /><strong>14. Batfish**</strong>强烈建议你将网络配置分析添加到故障排除工具包中。虽然Ping可以告诉你某些设备或连接存在问题，Traceroute/MTR可以告诉你它在哪里出了问题，但是像Batfish这样的开源工具可以告诉您它为什么出现了故障。更好的是，可以使用Batfish或类似的验证工具来确保网络故障不会发生。<br /><br><br /><strong>15. Fiddler**</strong>当考虑网络故障工具时，现在可用的SaaS很多。虽然如此，Wireshark和Fiddler是SaaS网络故障排除必不可少的工具。<br /><br><br /><strong>16. New Relic And Pingdom</strong>从两个方面监控每个系统。首先，从系统/服务器本身到外部进行监控，推荐New Relic。而从数据中心外部监控计算机的IP。推荐Pingdom。这种双向方法可以即时了解要在哪里找到问题。</p>
+<hr>
 ]]></content>
       <categories>
-        <category>笔记</category>
+        <category>转载</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
-        <tag>bug</tag>
+        <tag>工具</tag>
       </tags>
   </entry>
   <entry>
     <title>解决git@github.com: Permission denied (publickey).</title>
     <url>/2020/09/21/%E8%A7%A3%E5%86%B3git-github-com-Permission-denied-publickey/</url>
-    <content><![CDATA[<h1 id="解决-103-x69-116-64-x67-105-x74-x68-x75-x62-46-x63-x6f-x6d-Permission-denied-publickey"><a href="#解决-103-x69-116-64-x67-105-x74-x68-x75-x62-46-x63-x6f-x6d-Permission-denied-publickey" class="headerlink" title="解决&#103;&#x69;&#116;&#64;&#x67;&#105;&#x74;&#x68;&#x75;&#x62;&#46;&#x63;&#x6f;&#x6d;: Permission denied (publickey)."></a>解决<a href="mailto:&#103;&#x69;&#116;&#64;&#x67;&#105;&#x74;&#x68;&#x75;&#x62;&#46;&#x63;&#x6f;&#x6d;">&#103;&#x69;&#116;&#64;&#x67;&#105;&#x74;&#x68;&#x75;&#x62;&#46;&#x63;&#x6f;&#x6d;</a>: Permission denied (publickey).</h1><p><strong><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600691414505-8704740b-63d0-4842-8287-b80d8c9c6463.png#align=left&display=inline&height=271&margin=%5Bobject%20Object%5D&name=image.png&originHeight=271&originWidth=672&size=127432&status=done&style=none&width=672" alt="image.png"></strong><br /><strong>原因分析</strong><br />Permission denied (publickey) 没有权限的publickey ，<br />出现这错误一般是以下两种原因</p>
+    <content><![CDATA[<h1 id="解决-x67-105-116-64-103-105-116-x68-117-98-46-x63-x6f-x6d-Permission-denied-publickey"><a href="#解决-x67-105-116-64-103-105-116-x68-117-98-46-x63-x6f-x6d-Permission-denied-publickey" class="headerlink" title="解决&#x67;&#105;&#116;&#64;&#103;&#105;&#116;&#x68;&#117;&#98;&#46;&#x63;&#x6f;&#x6d;: Permission denied (publickey)."></a>解决<a href="mailto:&#x67;&#105;&#116;&#64;&#103;&#105;&#116;&#x68;&#117;&#98;&#46;&#x63;&#x6f;&#x6d;">&#x67;&#105;&#116;&#64;&#103;&#105;&#116;&#x68;&#117;&#98;&#46;&#x63;&#x6f;&#x6d;</a>: Permission denied (publickey).</h1><p><strong><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600691414505-8704740b-63d0-4842-8287-b80d8c9c6463.png#align=left&display=inline&height=271&margin=%5Bobject%20Object%5D&name=image.png&originHeight=271&originWidth=672&size=127432&status=done&style=none&width=672" alt="image.png"></strong><br /><strong>原因分析</strong><br />Permission denied (publickey) 没有权限的publickey ，<br />出现这错误一般是以下两种原因</p>
 <ul>
 <li>客户端与服务端未生成 ssh key</li>
 <li>客户端与服务端的ssh key不匹配</li>
@@ -762,6 +758,24 @@
       </categories>
       <tags>
         <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决hexo搭建的博客的翻页箭头显示代码bug</title>
+    <url>/2020/09/23/%E8%A7%A3%E5%86%B3hexo%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%BF%BB%E9%A1%B5%E7%AE%AD%E5%A4%B4%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81bug/</url>
+    <content><![CDATA[<p><a name="ircwS"></a></p>
+<h3 id="问题场景："><a href="#问题场景：" class="headerlink" title="问题场景："></a>问题场景：</h3><p><strong>hexo博客pure主题，分页显示bug，将代码显示出来了；</strong><br />如下所示：<br /><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1601191802263-90500d93-9ae0-41fb-9969-bced4417f95a.png#align=left&display=inline&height=82&margin=%5Bobject%20Object%5D&name=image.png&originHeight=82&originWidth=684&size=5822&status=done&style=none&width=684" alt="image.png"><br /><strong>搭建好博客，上传文章数量多到需要分页时，发现翻页箭头显示了代码。。。 而不是’&gt;’</strong><br><a name="8z70g"></a></p>
+<h3 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h3><p><strong>找到 pagination.ejs中的 paginator 函数，添加 escape: false 试试，代码形如</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;%- paginator(&#123;</span><br><span class="line">                prev_text: &#39;&lt;i class&#x3D;&quot;icon icon-angle-left&quot;&gt;&lt;&#x2F;i&gt; &#39; + __(&#39;pagination.prev&#39;),</span><br><span class="line">                next_text: __(&#39;pagination.next&#39;) + &#39; &lt;i class&#x3D;&quot;icon icon-angle-right&quot;&gt;&lt;&#x2F;i&gt;&#39;,</span><br><span class="line">                escape: false</span><br><span class="line">            &#125;) %&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600796308874-4dcc4bb8-639b-4e42-917a-6a1332280c56.png#align=left&display=inline&height=279&margin=%5Bobject%20Object%5D&name=image.png&originHeight=279&originWidth=1106&size=42215&status=done&style=none&width=1106" alt="image.png"><br><a name="feVmL"></a></p>
+<h3 id="恢复正常："><a href="#恢复正常：" class="headerlink" title="恢复正常："></a>恢复正常：</h3><p><img src="https://cdn.nlark.com/yuque/0/2020/png/1464016/1600796621318-bad385ff-9dac-4b86-b49f-5306f47aaf83.png#align=left&display=inline&height=179&margin=%5Bobject%20Object%5D&name=image.png&originHeight=179&originWidth=519&size=14438&status=done&style=none&width=519" alt="image.png"></p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>bug</tag>
       </tags>
   </entry>
   <entry>
